@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Attacks Risk Report</title>
+    <style>
+        .risk-reports {
+            font-family: Calibri, Helvetica, Arial, sans-serif;
+        }
+
+        .risk-reports a {
+            text-decoration: none;
+        }
+
+        .risk-reports section {
+            width: 650px;
+            min-height: 840px;
+            position: relative;
+        }
+
+        .risk-reports .left-bar {
+            background-color: #000;
+            width: 120px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        @media print {
+            .risk-reports .pagebreak {
+                page-break-after: always;
+                margin-top: -15px;
+            }
+
+            .risk-reports .widget-group {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media screen {
+            .risk-reports section {
+                margin: auto;
+                margin-bottom: 10px;
+                border: 1px solid #eee;
+                padding: 20px 35px 60px 0;
+            }
+        }
+
+        .risk-reports .title {
+            height: 70px;
+            display: inline-block;
+        }
+
+        
+            .risk-reports .content0 {
+                
+                margin-left: 120px;
+                
+                
+            }
+
+            .risk-reports .icon0 {
+                
+                width: 120px;
+                
+                position: absolute;
+                text-align: center;
+            }
+
+            .risk-reports .icon0 img {
+                max-width: 55%;
+            }
+        
+            .risk-reports .content1 {
+                
+                margin-left: 90px;
+                
+                
+            }
+
+            .risk-reports .icon1 {
+                
+                width: 90px;
+                
+                position: absolute;
+                text-align: center;
+            }
+
+            .risk-reports .icon1 img {
+                max-width: 55%;
+            }
+        
+            .risk-reports .content2 {
+                
+                margin-left: 90px;
+                
+                
+            }
+
+            .risk-reports .icon2 {
+                
+                width: 90px;
+                
+                position: absolute;
+                text-align: center;
+            }
+
+            .risk-reports .icon2 img {
+                max-width: 55%;
+            }
+        
+            .risk-reports .content3 {
+                
+                margin-left: 90px;
+                
+                
+            }
+
+            .risk-reports .icon3 {
+                
+                width: 90px;
+                
+                position: absolute;
+                text-align: center;
+            }
+
+            .risk-reports .icon3 img {
+                max-width: 55%;
+            }
+        
+            .risk-reports .content4 {
+                
+                margin-left: 90px;
+                
+                
+            }
+
+            .risk-reports .icon4 {
+                
+                width: 90px;
+                
+                position: absolute;
+                text-align: center;
+            }
+
+            .risk-reports .icon4 img {
+                max-width: 55%;
+            }
+        
+            .risk-reports .content5 {
+                
+                margin-left: 90px;
+                
+                
+            }
+
+            .risk-reports .icon5 {
+                
+                width: 90px;
+                
+                position: absolute;
+                text-align: center;
+            }
+
+            .risk-reports .icon5 img {
+                max-width: 55%;
+            }
+        
+
+        .risk-reports .report-name {
+            color: #F10000;
+            font-size: 32pt;
+            padding-left: 125px;
+            margin: 20px 0;
+            display: block;
+            line-height: 70px;
+            min-height: 70px;
+            max-height: 130px;
+            overflow: hidden;
+        }
+
+        .risk-reports .about-cisco-heading {
+            color: #F10000;
+            font-size: 32pt;
+            margin: 20px 0 20px 0px;
+            display: block;
+            line-height: 70px;
+            text-transform: uppercase;
+        }
+
+        .risk-reports .company-name, .risk-reports .report-creation-date {
+            font-size: 18pt;
+            padding-left: 64px;
+            margin: 20px 0;
+            display: block;
+            line-height: 40px;
+            min-height: 40px;
+            overflow: hidden;
+        }
+
+        .risk-reports .company-name {
+            max-height: 120px;
+            word-wrap: break-word;
+        }
+
+        .risk-reports .author, .risk-reports .contact-email {
+            font-size: 13pt;
+            padding-left: 60px;
+            margin: 20px 0;
+            line-height: 25px;
+            min-height: 25px;
+            max-height: 50px;
+            overflow: hidden;
+            display: block;
+            word-wrap: break-word;
+        }
+
+        .risk-reports .author {
+            padding-top: 270px;
+        }
+
+        .risk-reports h1 {
+            color: #F10000;
+            font-size: 24pt;
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        .risk-reports h2 {
+            border-bottom: 1px solid #F10000;
+            font-size: 12pt;
+            font-weight: normal;
+            margin: 25px 0 15px;
+            text-transform: uppercase;
+            text-align: left;
+            line-height: 1.33;
+        }
+
+        .risk-reports h3 {
+            color: #F10000;
+            font-size: 11pt;
+            font-weight: normal;
+            margin: 5px 0 -5px 0;
+        }
+
+        .risk-reports hr {
+            border: none;
+            border-top: 1px solid #F10000;
+        }
+
+        .risk-reports .text-widget {
+            text-align: justify;
+            margin: 15px 0;
+            font-size: 10pt;
+            line-height: 125%;
+        }
+
+        .risk-reports .align-right {
+            text-align: right;
+        }
+
+        .risk-reports .align-center {
+            text-align: center;
+        }
+
+        .risk-reports .horizontal-layout-widget {
+            position: relative;
+        }
+
+        .risk-reports .horizontal-layout-widget > div {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: top;
+            white-space: nowrap;
+        }
+
+        .risk-reports .horizontal-layout-widget > div * {
+            white-space: normal;
+        }
+
+        .risk-reports .horizontal-layout-widget.margin-bottom {
+            margin-bottom: 15px;
+        }
+
+        .risk-reports .pie-chart-widget {
+            text-align: center;
+        }
+
+        .risk-reports .summary-widget-cell {
+            border: 1px solid #ccc;
+            background-color: #fff;
+            width: 150px;
+            height: 145px;
+            min-width: 150px; /* For Smaller labels */
+            min-height: 145px;
+            position: relative;
+            margin: 8px 0;
+            display: inline-block;
+        }
+
+        .risk-reports .summary-widget .first-cell {
+            margin-right: calc((100% - 3 * 150px - 8px) / 4);
+        }
+
+        .risk-reports .summary-widget .middle-cell {
+            margin-left: calc((100% - 3 * 150px - 8px) / 4);
+            margin-right: calc((100% - 3 * 150px - 8px) / 4);
+        }
+
+        .risk-reports .summary-widget .last-cell {
+            margin-left: calc((100% - 3 * 150px - 8px) / 4);
+        }
+
+        .risk-reports .summary-widget .note {
+            text-align: left;
+            color: #888;
+            font-size: 9pt;
+            margin-top: -2px;
+            top: 150px;
+            position: absolute;
+        }
+
+        .risk-reports .summary-widget-cell .label {
+            text-align: center;
+            word-wrap: break-word;
+            overflow: hidden;
+            color: #F10000; /* Shade of red */
+            font-size: 12pt;
+            font-weight: bold;
+            width: 140px;
+            height: 45px;
+            padding: 10px 5px;
+            position: absolute;
+        }
+
+        .risk-reports .summary-widget-cell .count {
+            text-align: center;
+            word-wrap: break-word;
+            color: #F10000; /* Shade of red */
+            font-size: 24pt;
+            font-weight: bolder;
+            display: inline-block;
+            position: absolute;
+            top: 70px;
+            width: 75px;
+            height: 60px;
+            padding: 5px;
+        }
+
+        .risk-reports .summary-widget-cell .icon {
+            text-align: center;
+            padding: 0px 5px;
+            display: inline-block;
+            position: absolute;
+            top: 65px;
+            left: 75px;
+            width: 65px;
+            height: 65px;
+            overflow: hidden;
+        }
+
+        .risk-reports .summary-widget-cell .small-label {
+            font-size: 14pt;
+            top: 75px;
+        }
+
+        .risk-reports .summary-widget-cell .smaller-label {
+            font-size: 13pt;
+            top: 75px;
+        }
+
+        .risk-reports .network-profile-widget,
+        .risk-reports .malware-profile-widget {
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .risk-reports .malware-profile-widget {
+            position: relative;
+            height: 195px;
+        }
+
+        .risk-reports .network-profile-widget .summary-widget-cell,
+        .risk-reports .malware-profile-widget .summary-widget-cell {
+            margin: 0 -1px;
+            width: 115px;
+            height: 115px;
+            min-width: 115px;
+            min-height: 115px;
+            white-space: normal;
+        }
+
+        .risk-reports .malware-profile-widget .summary-widget-cell {
+            top: 30px;
+        }
+
+        .risk-reports .network-profile-widget .count,
+        .risk-reports .malware-profile-widget .count {
+            color: gray;
+            top: 0;
+            left: 0;
+            width: 104px;
+            padding: 10px 5px 5px;
+            height: 45px;
+            font-size: 24pt;
+        }
+
+        .risk-reports .malware-profile-widget .count {
+            color: #F10000;
+        }
+
+        .risk-reports .network-profile-widget .small-label,
+        .risk-reports .malware-profile-widget .small-label {
+            font-size: 20pt;
+        }
+
+        .risk-reports .network-profile-widget .smaller-label,
+        .risk-reports .malware-profile-widget .smaller-label {
+            font-size: 14pt;
+        }
+
+        .risk-reports .network-profile-widget .text,
+        .risk-reports .malware-profile-widget .text {
+            word-wrap: break-word;
+            overflow: hidden;
+            color: #888;
+            font-size: 11pt;
+            width: 104px;
+            height: 50px;
+            padding: 5px 5px;
+            position: absolute;
+            display: block;
+        }
+
+        .risk-reports .malware-profile-widget .text {
+            height: 60px;
+            font-weight: bold;
+        }
+
+        .risk-reports .network-profile-widget .top,
+        .risk-reports .malware-profile-widget .top {
+            top: 0;
+            display: table-cell;
+            vertical-align: middle;
+            position: relative;
+            padding: 0 5px;
+            height: 50px;
+        }
+
+        .risk-reports .network-profile-widget .count-middle,
+        .risk-reports .malware-profile-widget .count-middle {
+            top: 30px;
+        }
+
+        .risk-reports .network-profile-widget .count-bottom,
+        .risk-reports .malware-profile-widget .count-bottom {
+            top: 60px;
+        }
+
+        .risk-reports .network-profile-widget .bottom,
+        .risk-reports .malware-profile-widget .bottom {
+            bottom: 0;
+        }
+
+        .risk-reports .network-profile-widget .bottom-plus,
+        .risk-reports .malware-profile-widget .bottom-plus {
+            top: 75px;
+        }
+
+        .risk-reports .malware-profile-widget .story {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .risk-reports .malware-profile-widget .story-starts {
+            left: 50px;
+            top: -30px;
+        }
+
+        .risk-reports .malware-profile-widget .story-separator {
+            left: 54px;
+            top: -31px;
+        }
+
+        .risk-reports .malware-profile-widget .story-ends {
+            left: 50px;
+            top: 108px;
+        }
+
+        .risk-reports .malware-profile-widget .first-cell  .story-ends,
+        .risk-reports .malware-profile-widget .middle-cell .story-starts,
+        .risk-reports .malware-profile-widget .middle-cell .story-ends,
+        .risk-reports .malware-profile-widget .last-cell   .story-separator,
+        .risk-reports .malware-profile-widget .last-cell   .story-starts {
+            display: none;
+        }
+
+        .risk-reports .malware-profile-widget .no-user-mapping {
+            top: 178px;
+            position: absolute;
+            font-size: 10pt;
+            color: #F10000;
+            font-weight: bold;
+            right: 0;
+            white-space: nowrap;
+        }
+
+        .risk-reports .overview-box {
+            border: 1px solid #CCC;
+        }
+
+        .risk-reports .overview-box.full-height {
+            position: absolute;
+            bottom: 0;
+            top: 0;
+        }
+
+        .risk-reports .overview-box.full-height table {
+            height: 100%;
+        }
+
+        .risk-reports .table-widget table,
+        .risk-reports .overview-box table {
+            border-collapse: collapse;
+            table-layout: fixed;
+            width: 100%;
+        }
+
+        .risk-reports .table-widget th,
+        .risk-reports .table-widget td {
+            border: 1px solid #CCC;
+            font-size: 8pt;
+            overflow: hidden;
+            text-align: center;
+            text-overflow: ellipsis;
+            vertical-align: top;
+        }
+
+        .risk-reports .table-widget th {
+            border-bottom: 1px solid #F10000;
+            font-weight: normal;
+            padding: 10px 12px;
+            text-transform: uppercase;
+        }
+
+        .risk-reports .table-widget td {
+            padding: 2px 12px;
+        }
+
+        .risk-reports .table-widget td.middle {
+            vertical-align: middle;
+        }
+
+        .risk-reports .table-widget td.justify {
+            text-align: justify;
+        }
+
+        .risk-reports .table-widget td.left {
+            text-align: left;
+        }
+
+        .risk-reports .table-widget td.pad {
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+
+        .risk-reports .table-widget td.nowrap {
+            white-space: nowrap;
+        }
+
+        .risk-reports .dynamic-analysis-details-widget {
+            font-size: 10pt;
+        }
+
+        .risk-reports .dynamic-analysis-details-widget .summary {
+            margin: 1em 3em;
+            table-layout: fixed;
+            width: 500px;
+        }
+
+        .risk-reports .dynamic-analysis-details-widget .summary th {
+            width: 100px;
+        }
+
+        .risk-reports .dynamic-analysis-details-widget .summary td {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .risk-reports .dynamic-analysis-details-widget .threats {
+            font-size: 8pt;
+            margin: 1.5em 0;
+        }
+
+        .risk-reports .dynamic-analysis-details-widget .threats .sidebar {
+            float: right;
+            width: 33%;
+            margin: 0 0 1em 2em;
+            display: inline-block;
+            border-collapse: collapse;
+        }
+
+        .risk-reports .dynamic-analysis-details-widget .threats .sidebar td {
+            padding: 0 0 1px 5px;
+        }
+
+        .risk-reports .dynamic-analysis-details-widget .threats h4 {
+            font-size: 10pt;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .risk-reports .dynamic-analysis-details-widget .threats p {
+            margin: 0.5em 0 2.5em;
+            text-align: justify;
+        }
+
+        .risk-reports .dynamic-analysis-details-widget ul {
+            padding: 0;
+        }
+
+        .risk-reports .dynamic-analysis-details-widget li {
+            list-style-type: none;
+            clear: both;
+        }
+
+        .risk-reports .dynamic-analysis-details-widget table th {
+            text-align: left;
+            vertical-align: baseline;
+        }
+
+        .risk-reports .dynamic-analysis-details-widget table td {
+            vertical-align: baseline;
+        }
+
+        .risk-reports .overview-box th {
+            border-bottom: 1px solid #F10000;
+            font-size: 8pt;
+            overflow: hidden;
+            text-align: center;
+            text-overflow: ellipsis;
+            font-weight: normal;
+            padding: 0px 12px 0px 12px;
+            text-transform: uppercase;
+            height: 30px;
+        }
+
+        .risk-reports .overview-box th .description {
+            font-size: 8pt;
+            overflow: hidden;
+            text-align: center;
+            text-overflow: ellipsis;
+            font-weight: normal;
+            padding: 2px 12px 0px;
+            color: #888;
+        }
+
+        .risk-reports .overview-box th .description:empty {
+            display: none;
+        }
+
+        .risk-reports .overview-box td {
+            font-size: 24pt;
+            overflow: hidden;
+            text-align: center;
+            text-overflow: ellipsis;
+            font-weight: bold;
+            padding: 6px 12px;
+            color: #F10000;
+            height: 65px;
+        }
+
+        .risk-reports .list-box {
+            border: 2px solid black;
+            background-color: #DCD9D5;
+            height: 110px;
+            padding: 2px 10px;
+        }
+
+        .risk-reports .list-box .title {
+            display: table;
+            text-align: center;
+            font-size: 12pt;
+            font-weight: normal;
+            height: 50%;
+        }
+
+        .risk-reports .list-box .title span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .risk-reports .list-box .value {
+            display: block;
+            font-size: 10pt;
+            font-weight: normal;
+            overflow: hidden;
+            text-align: center;
+            font-style: italic;
+            line-height: 1.2em;
+            max-height: 3.6em;
+        }
+
+        .risk-reports .list-box .no_data {
+            opacity: 0.4;
+            font-style: normal;
+        }
+
+        .risk-reports ol {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body class="risk-reports">
+    
+        <section>
+            
+            
+            <div class="left-bar"></div>
+            
+            <div class="icon0">
+                <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAAAhCAYAAABtNH0cAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC42/Ixj3wAABctJREFUaEPtWVuIVVUYnikLK0up7J52zwiyh4rqoXs0qAReilIwH6SmIkKhCI3Og/Y0FQgHmz1n39beMxPnPESoIFQ4BmZpNZrdVAxGkTKt0Sy6QU7fv8+31tn7zD6dczps56H54Ofs9f2Xtda/13WftlbR0xNc6ThqCPJNEAQXkM4cjuNMdd3ga8fx9ztO31Wkxw6uGz6FBo2IFApqHunMgQTM1fXatuokPXYoFPyndYPwlhaQzhye583X9bqueob02GE8EcT/KhGu6z+PCnejwoWkDOolwnEC0e/2vGAJqYZh28ES+O+RGKQM6iVC2iq+WD+Wk2odCPh9uaPqM1IG9ROhhtjYr0g1DPh9Sd8hUgb1EoE2fyo6/B4h1TokWDmo2kXKoIFEHGSD9pBqGOggRmEU+yApgwZGxE7We5RUY0DgKTgHnMViAlkmwrbts9esCc9hMYEsE2FZ686UPrNYhmWFt8LxNzge8X3/UtIGWSWiUAiuQb3HoD9uWd4M0gZZJcK2+y+B7rD0Ge2/jbQ01l+mg9p2OJu0QVaJQEMWVnyDxaQNskuEN1v7Qr+MtCjU8opCzSFtkFUisCss0r44lT5B2iCrRPT0qDnaN7GrjCeCwNRYUHZSJ1DBzaQNoBukfgMpg3qJAL+Vvu+TMrBt/y7tC7mPtAG49+j7ESmD+okI1tN31MtDcmZKX8v6MNlmEHNxkxzVGEEYhpehw0styzqflEG9RGBXwMLkL611M8VBq0PmLIsJiI/UKzFIGdRLhLRVfF3XvZxUAtJX6TOLrQNDq1M3CB2aTzpzoPPzdL14w6NOnicdyPpNGGa/QoZ7e3unk84ctt07Xeos1x3MJD22wDCcnM+XJrF40iB1WlZpMovjGMc4xhiyjWJxegAr9kNKqRtyuZFTqIpQLBbPFRuRUql0KukE4HedbJeybeJec+PAwMAEqtLQ7nl9MwoFrwPb5f3wnUY+FaIXW9xhsCVnsHBji7wDe+6HeruqbFuqiyYR0Ll+rZNkkI7geW9dAT46XMWlOoYGki0fVvZV26d9IHZduTQGW6ptIVs9L7ydZq2hvF+rv1Iqgag3aBahViJGRkba0akdSd+y4Jj9Gs0MkJxX02xFYP8IzSKgDbPA/1FtpwWx/sRF8mGa/zd4XukiBDteCRx9bVot53NU0A1ZSdMItRIhw1vz8NknZQz1iZgaV8szzSI4Th+mnq4vkk/QkRWO472I52K8U5gK5yHesLaVEYSyJHE1fvdqHu0+VigULqRb80CQl3UwVPI5Opf6AUWjViLk0KV5NOo7/N4Jur2sTQL6DdoWd6C+XC6XWIfiwAt5oRLX/7irq/JhCevVGUhGbLqEK6hqHgi0UQdCox4nXRO1EiELJzqob5KU6N+xldCdTrMI4ORDTWQj/6KRTgXqeycWbxZpA8SKjS61kXTzQCCzQMpNkXRN1EqEwHX7rsWo2qb1WlDHOpq0ydtHwnkrVCdwYj2NqlTAbpOOI6OOtAGm0fVaL30h3Tww9IqxQC+Rrol/S4SG7ECQPGzMAozyLVQj+cH+Cu/fSzoVsPVjMZ4jbQD9k1oP6SfdPBBosQ6ERPyCjnZQJW9vQvW+3kgiNGATalvfryyAKL+pedS5N76Y5vP5SfHrPIa7uYHiWabUg1ShLeE9KP+k9dhtHqOqecj8RQXRl56KqG/R4e1I0lE8N7R9yiEK3Nvo2Cq8OSxwKo9n+VgcTYH4WiAHIXYqioN6/obsguyA7e/x7bM8leILYhTvAH75X4qJsa3WAa9hWJaahuBfxANXpLFEJHeNpGBNeJ1mBqjvbjT+xzT76nOEjBDYb0+zFUH8we7u8GKat4ZczpuIhj2LwB+g84cRfBhvdicatYgmEdCgV2CzWcRxilNJ8y0HWxDjAHx/RoxDsH0X54hHaTIKa9dGHVwFv0H84qygfpAY8fVEQxZVxJb1YBNsJfYhaQNsO6t3pXS0tf0DmrIyOPVw+wUAAAAASUVORK5CYII=" alt="Logo" />
+</h1>
+            </div>
+            <div class="title content0">
+                <h1>&nbsp;</h1>
+            </div>
+            <hr/>
+            <div class="content0">
+                <div class="text-widget align-right"><div class='report-name'>Attacks Risk Report</div> <div class='company-name'>Prepared for ASU</div> <div class='report-creation-date'>Monday, November 2, 2020</div> <div class='author'>Prepared by AMM</div> <div class='contact-email'>Contact: AMM</div></div>
+            </div>
+            
+        </section>
+        
+        <div class="pagebreak"></div>
+        
+    
+        <section>
+            
+            
+            <div class="icon1">
+                <h1><img src="data:image/png;base64,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" alt="Logo" />
+</h1>
+            </div>
+            <div class="title content1">
+                <h1>I. Executive Summary</h1>
+            </div>
+            <hr/>
+            <div class="content1">
+                <div class="widget-group"><div class="text-widget">Cisco has determined that ASU is at a high risk due to the observation of attacks on the network targeting hosts that may be vulnerable. These attacks and hosts require further investigation to help lower the risk. <br><br> <b>Assessment Period: <span title="America/Chicago (UTC -5)">Thu Oct 1 2020 00:01:00</span> to <span title="America/Chicago (UTC -5)">Sat Oct 31 2020 23:59:00</span></b></div><div class="summary-widget"><div class="summary-widget-cell first-cell"><div class="label">Total Attacks</div><div class="count small-label">70,509</div><div class="icon"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iNjVweCIgaGVpZ2h0PSI2NXB4IiB2aWV3Qm94PSIwIDAgNjUgNjUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiPiAgICAgICAgPHRpdGxlPlRvdGFsX2F0dGFja3MxPC90aXRsZT4gICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+ICAgIDxkZWZzPjwvZGVmcz4gICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+ICAgICAgICA8ZyBpZD0iVG90YWxfYXR0YWNrcyIgc2tldGNoOnR5cGU9Ik1TQXJ0Ym9hcmRHcm91cCI+ICAgICAgICAgICAgPGcgaWQ9Ikljb25fVG90YWxBdHRhY2tzIiBza2V0Y2g6dHlwZT0iTVNMYXllckdyb3VwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMC4wMDAwMDAsIDE1LjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8ZyBpZD0iSWNvbl9GaXJld2FsbCIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+ICAgICAgICAgICAgICAgICAgICA8ZyBpZD0iZmlleHQtZmlyZXdhbGwtbm9ybWFsIiBmaWxsPSIjNzc3Nzc3Ij4gICAgICAgICAgICAgICAgICAgICAgICA8ZyBpZD0iR3JvdXAiPiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDIuNTg4LDAgTDIuMzc2LDAgQzEuMDUxMiwwIDAsMC41ODIwOTY1NzkgMCwxLjM3NjI1ODA4IEwwLDMzLjEyMTA3ODkgQzAsMzMuOTE1MjQwNCAxLjA1MTIsMzQuNjIyODQ0OCAyLjM3NiwzNC42MjI4NDQ4IEw0Mi41ODgsMzQuNjIyODQ0OCBDNDMuOTA5MiwzNC42MjI4NDQ4IDQ1LDMzLjkxNTI0MDQgNDUsMzMuMTIxMDc4OSBMNDUsMS4zNzYyNTgwOCBDNDUsMC41ODIwOTY1NzkgNDMuOTA5MiwwIDQyLjU4OCwwIEw0Mi41ODgsMCBaIiBpZD0iU2hhcGUiPjwvcGF0aD4gICAgICAgICAgICAgICAgICAgICAgICA8L2c+ICAgICAgICAgICAgICAgICAgICA8L2c+ICAgICAgICAgICAgICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlLTEwIiBmaWxsPSIjRkZGRkZGIiB4PSIyIiB5PSI1IiB3aWR0aD0iNDEiIGhlaWdodD0iMiIgcng9IjIiPjwvcmVjdD4gICAgICAgICAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtMTAiIGZpbGw9IiNGRkZGRkYiIHg9IjIiIHk9IjEzIiB3aWR0aD0iNDEiIGhlaWdodD0iMiIgcng9IjIiPjwvcmVjdD4gICAgICAgICAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtMTAiIGZpbGw9IiNGRkZGRkYiIHg9IjIiIHk9IjIxIiB3aWR0aD0iNDEiIGhlaWdodD0iMiIgcng9IjIiPjwvcmVjdD4gICAgICAgICAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtMTAiIGZpbGw9IiNGRkZGRkYiIHg9IjIiIHk9IjI5IiB3aWR0aD0iNDEiIGhlaWdodD0iMiIgcng9IjIiPjwvcmVjdD4gICAgICAgICAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtMTAiIGZpbGw9IiNGRkZGRkYiIHg9IjEwIiB5PSIxIiB3aWR0aD0iMiIgaGVpZ2h0PSI1IiByeD0iMiI+PC9yZWN0PiAgICAgICAgICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZS0xMCIgZmlsbD0iI0ZGRkZGRiIgeD0iMzIiIHk9IjEiIHdpZHRoPSIyIiBoZWlnaHQ9IjUiIHJ4PSIyIj48L3JlY3Q+ICAgICAgICAgICAgICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlLTEwIiBmaWxsPSIjRkZGRkZGIiB4PSIxNyIgeT0iNiIgd2lkdGg9IjIiIGhlaWdodD0iOCIgcng9IjIiPjwvcmVjdD4gICAgICAgICAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtMTAiIGZpbGw9IiNGRkZGRkYiIHg9IjEwIiB5PSIxNCIgd2lkdGg9IjIiIGhlaWdodD0iOCIgcng9IjIiPjwvcmVjdD4gICAgICAgICAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtMTAiIGZpbGw9IiNGRkZGRkYiIHg9IjMyIiB5PSIxNCIgd2lkdGg9IjIiIGhlaWdodD0iOCIgcng9IjIiPjwvcmVjdD4gICAgICAgICAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtMTAiIGZpbGw9IiNGRkZGRkYiIHg9IjE3IiB5PSIyMiIgd2lkdGg9IjIiIGhlaWdodD0iOCIgcng9IjIiPjwvcmVjdD4gICAgICAgICAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtMTAiIGZpbGw9IiNGRkZGRkYiIHg9IjM3IiB5PSI2IiB3aWR0aD0iMiIgaGVpZ2h0PSI4IiByeD0iMiI+PC9yZWN0PiAgICAgICAgICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZS0xMCIgZmlsbD0iI0ZGRkZGRiIgeD0iMzciIHk9IjIyIiB3aWR0aD0iMiIgaGVpZ2h0PSI4IiByeD0iMiI+PC9yZWN0PiAgICAgICAgICAgICAgICA8L2c+ICAgICAgICAgICAgICAgIDxnIGlkPSJJY29uX1NrZWxldG9uIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNi4wMDAwMDAsIDIyLjAwMDAwMCkiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTE0LjExMzU5MTMsNi4xMDM1MzQ0OSBDMTUuMDcyMTgxLDYuMjIxOTcxNjcgMTYuMDA0OTUzLDYuNDQzOTQzMzMgMTYuODcxMDk4Myw2LjgyOTA2MDI1IEMxOC4zMzY4ODI4LDcuNDY1MTY5ODYgMTkuMzc3OTIyOSw4LjY4NjQwNjIgMjAuMDUyNTE2OSw5Ljk3NDMxMjQ3IEMyMC40NzcyNjEyLDEwLjc2NjUwODIgMjAuODI3MDUwNywxMS41ODc3MjQ5IDIwLjk1MTk3NTUsMTIuNDUzNjQ5NyBDMjAuOTkzNjE3MSwxMi43MjczODg2IDIxLjAxMDI3MzgsMTMuMDA4OTcxIDIwLjk5MzYxNzEsMTMuMjk3NjEyNiBDMjAuOTE3ODI5NCwxNC43MTEwMTUyIDIwLjAwMjU0NjksMTUuOTYxMjcyNiAxOS4wMTE0NzY4LDE3LjAxMjMwNDUgQzE4LjQyODQ5NDMsMTcuNjM0Mjk1OCAxNy44MjEzNTk3LDE4LjI0MDYgMTcuMTI5Mjc2MywxOC43NTE5OTc2IEMxNy4xMjkyNzYzLDE4Ljc1MTk5NzYgMTcuMDc5MzA2MywyMC4xNjU0MDAzIDE2LjEzODIwNjEsMjEuMjAyMzEzOCBDMTUuNjIxODUwMiwyMS43NjQ2OTQzIDE0LjMxNDMwMzgsMjEuOTg2NjY2IDEyLjk5NzU5NjMsMjIgQzExLjY5MDA1LDIxLjk4NjY2NiAxMC4zODMzMzY0LDIxLjc2NDY5NDMgOS44NTg2NTIyMiwyMS4yMDIzMTM4IEM4LjkyNTg4MDI5LDIwLjE2NjE4NDYgOC44Njg0MTQ4NywxOC43NTE5OTc2IDguODY4NDE0ODcsMTguNzUxOTk3NiBDOC4xODM4MjY5LDE4LjI0MDYgNy41NzY2OTIzMiwxNy42MzQyOTU4IDYuOTg1MzgxNTQsMTcuMDEyMzA0NSBDNi4wMDI2Mzk2OSwxNS45NjEyNzI2IDUuMDc4MTk2MDgsMTQuNzExMDE1MiA1LjAwMzI0MTE5LDEzLjI5NzYxMjYgQzQuOTk0MDgwMDQsMTMuMDA4OTcxIDUuMDAzMjQxMTksMTIuNzI3Mzg4NiA1LjA0NDg4MjgsMTIuNDUzNjQ5NyBDNS4xNzgxMzU5MywxMS41ODc3MjQ5IDUuNTI3OTI1NCwxMC43NjY1MDgyIDUuOTQ0MzQxNDQsOS45NzQzMTI0NyBDNi42MjcyNjM3NSw4LjY4NjQwNjIgNy42NjgzMDM4NSw3LjQ2NTE2OTg2IDkuMTM0MDg4MzEsNi44MjkwNjAyNSBDMTAuMDAwMjMzNyw2LjQ0Mzk0MzMzIDEwLjkzMzAwNTYsNi4yMjE5NzE2NyAxMS44ODI0MzQyLDYuMTAzNTM0NDkgQzEyLjI1NzIwODYsNi4wNTk2MTA3NyAxMi42MTYxNTkyLDYuMDIxOTYxODYgMTIuOTkwMTAwOCw2IEMxMy4zODE1MzE5LDYuMDIxOTYxODYgMTMuNzQ3OTc4LDYuMDU5NjEwNzcgMTQuMTEzNTkxMyw2LjEwMzUzNDQ5IFoiIGlkPSJGaWxsLTEiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIxLjUiIGZpbGw9IiM3Nzc3NzciPjwvcGF0aD4gICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xNC41Nzc3MzE5LDE0LjM1NjgwMzUgQzE0Ljk0OTMzNDQsMTUuMjQyODY1IDE1LjY3MTAxODEsMTYuNTcxMjc4OSAxNi44NzE5MTEyLDE1LjczNDA2NjEgQzE3LjUzODM1NjcsMTUuMjcwNjgxNyAxNy42OTY4OTc1LDE0LjA3MjUzMSAxNy4yMzkyMDk0LDEzLjQ2NjY3MTIgQzE2LjU0ODM3MzEsMTIuNTU0ODI4MyAxNC4wMjgyMTkzLDEzLjA0NjcwNzggMTQuNTc3NzMxOSwxNC4zNTY4MDM1IiBpZD0iRmlsbC0zIiBmaWxsPSIjRkZGRkZGIj48L3BhdGg+ICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTEuNDIyMjkxLDE0LjM1NjgwMzUgQzExLjA1MDcxMDUsMTUuMjQyODY1IDEwLjMyOTA2OTUsMTYuNTcxMjc4OSA5LjEyODI0NzQzLDE1LjczNDA2NjEgQzguNDYxMTI0MDcsMTUuMjcwNjgxNyA4LjMwMzMwOTk0LDE0LjA3MjUzMSA4Ljc2MDk3MDkxLDEzLjQ2NjY3MTIgQzkuNDUxMDQ5MDYsMTIuNTU0ODI4MyAxMS45NzE3NzExLDEzLjA0NjcwNzggMTEuNDIyMjkxLDE0LjM1NjgwMzUiIGlkPSJGaWxsLTUiIGZpbGw9IiNGRkZGRkYiPjwvcGF0aD4gICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMy43OTQ2NTI0LDE3LjgyNDU2MTQgQzEzLjYyNTAyNjUsMTcuOTI5ODI0NiAxMy4zMDI3MzcyLDE3Ljk5MTIyODEgMTIuOTk5MTk2MSwxOCBDMTIuNjk2NTQ3OCwxNy45OTEyMjgxIDEyLjM3NTE1MTMsMTcuOTI5ODI0NiAxMi4yMDU1MjU0LDE3LjgyNDU2MTQgQzExLjQ1NTYwMDMsMTcuMzY3NTQzOSAxMi45OTkxOTYxLDE2IDEyLjk5OTE5NjEsMTYgQzEyLjk5OTE5NjEsMTYgMTQuNTQ0NTc3NSwxNy4zNjc1NDM5IDEzLjc5NDY1MjQsMTcuODI0NTYxNCIgaWQ9IkZpbGwtNyIgZmlsbD0iI0ZGRkZGRiI+PC9wYXRoPiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTI1Ljc3NzE4NDIsNi4wMTA3NTE5OCBDMjUuMDI4NDQ2Myw5LjI4MjU0MTQ4IDIyLjEyMjQ2MjYsNi43Nzg1MzE5MiAyMi4xMjI0NjI2LDYuNzc4NTMxOTIgTDIxLjA4MjE1NzQsOCBMMTkuNDg3Nzg2Miw2LjU2OTEzNzM5IEwxOCw1LjE2NDQ0OTEgTDE5LjE0NTEyODUsNC4wMzg5NTM1MSBDMTkuMTQ1MTI4NSw0LjAzODk1MzUxIDE2LjM4ODAxMTQsMS4zNzc4OTgwNSAxOS42MjA3OTczLDAuMzY1ODI0NDk1IEMyMi44NDM4OTM1LC0wLjY1NDk3MzgzIDIzLjE0NDI2OTUsMC43MjM1NDAxNDcgMjMuMjg0MzI3NiwxLjMwODA5OTg3IEMyMy40MTY0NTc4LDEuODQwMzEwOTYgMjMuMzEwNzUzNiwyLjQ1MTA0NSAyMy4yODQzMjc2LDIuNTY0NDY3MDQgQzIzLjQwODUzLDIuNTI5NTY3OTUgMjQuMDA2NjM5NCwyLjM3MjUyMjA2IDI0LjUzNTE2MDIsMi40Njg0OTQ1NSBDMjUuMTM1MDMxNCwyLjU1NTc0MjI3IDI2LjU0MzUzOTQsMi43Mzg5NjI0OCAyNS43NzcxODQyLDYuMDEwNzUxOTgiIGlkPSJGaWxsLTkiIHN0cm9rZT0iI0ZGRkZGRiIgZmlsbD0iIzc3Nzc3NyI+PC9wYXRoPiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTAuMjIyNzczOTI0LDYuMDEwNzUxOTggQzAuOTcxNTExNzg0LDkuMjgyNTQxNDggMy44Nzc0OTU1NSw2Ljc3ODUzMTkyIDMuODc3NDk1NTUsNi43Nzg1MzE5MiBMNC45MTc4MDA3NCw4IEw2LjUxMjE3MTk1LDYuNTY5MTM3MzkgTDcuOTk5OTU4MTIsNS4xNjQ0NDkxIEw2Ljg1NDgyOTYzLDQuMDM4OTUzNTEgQzYuODU0ODI5NjMsNC4wMzg5NTM1MSA5LjYxMTk0NjY5LDEuMzc3ODk4MDUgNi4zNzkxNjA4NywwLjM2NTgyNDQ5NSBDMy4xNTYwNjQ2LC0wLjY1NDk3MzgzIDIuODU1Njg4NTksMC43MjM1NDAxNDcgMi43MTU2MzA1NiwxLjMwODA5OTg3IEMyLjU4MzUwMDM1LDEuODQwMzEwOTYgMi42ODkyMDQ1MiwyLjQ1MTA0NSAyLjcxNTYzMDU2LDIuNTY0NDY3MDQgQzIuNTkxNDI4MTcsMi41Mjk1Njc5NSAxLjk5MzMxODc1LDIuMzcyNTIyMDYgMS40NjQ3OTc5LDIuNDY4NDk0NTUgQzAuODY0OTI2NzQ4LDIuNTU1NzQyMjcgLTAuNTQzNTgxMjk4LDIuNzM4OTYyNDggMC4yMjI3NzM5MjQsNi4wMTA3NTE5OCIgaWQ9IkZpbGwtMTIiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIxLjUiIGZpbGw9IiM3Nzc3NzciPjwvcGF0aD4gICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0yNS43NzcxODQyLDE4Ljk4ODM3NTUgQzI1LjAyODQ0NjMsMTUuNzE2NTg2IDIyLjEyMjQ2MjYsMTguMjIwNTk1NiAyMi4xMjI0NjI2LDE4LjIyMDU5NTYgTDIxLjA4MjE1NzQsMTcgTDE5LjQ4Nzc4NjIsMTguNDI5MTE3NyBMMTgsMTkuODM1NTUwOSBMMTkuMTQ1MTI4NSwyMC45NjAxNzQgQzE5LjE0NTEyODUsMjAuOTYwMTc0IDE2LjM4ODAxMTQsMjMuNjIyMTAyIDE5LjYyMDc5NzMsMjQuNjM0MTc1NSBDMjIuODQzODkzNSwyNS42NTQ5NzM4IDIzLjE0NDI2OTUsMjQuMjc2NDU5OSAyMy4yODQzMjc2LDIzLjY5MTkwMDEgQzIzLjQxNjQ1NzgsMjMuMTU3OTQ0MSAyMy4zMTA3NTM2LDIyLjU0ODA4MjUgMjMuMjg0MzI3NiwyMi40MzQ2NjA1IEMyMy40MDg1MywyMi40Njk1NTk2IDI0LjAwNjYzOTQsMjIuNjI2NjA1NSAyNC41MzUxNjAyLDIyLjUzMTUwNTUgQzI1LjEzNTAzMTQsMjIuNDQzMzg1MyAyNi41NDM1Mzk0LDIyLjI2MDE2NSAyNS43NzcxODQyLDE4Ljk4ODM3NTUiIGlkPSJGaWxsLTE1IiBzdHJva2U9IiNGRkZGRkYiIGZpbGw9IiM3Nzc3NzciPjwvcGF0aD4gICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLjIyMjc3MzkyNCwxOC45ODgzNzU1IEMwLjk3MTUxMTc4NCwxNS43MTY1ODYgMy44Nzc0OTU1NSwxOC4yMjA1OTU2IDMuODc3NDk1NTUsMTguMjIwNTk1NiBMNC45MTc4MDA3NCwxNyBMNi41MTIxNzE5NSwxOC40MjkxMTc3IEw3Ljk5OTk1ODEyLDE5LjgzNTU1MDkgTDYuODU0ODI5NjMsMjAuOTYwMTc0IEM2Ljg1NDgyOTYzLDIwLjk2MDE3NCA5LjYxMTk0NjY5LDIzLjYyMjEwMiA2LjM3OTE2MDg3LDI0LjYzNDE3NTUgQzMuMTU2MDY0NiwyNS42NTQ5NzM4IDIuODU1Njg4NTksMjQuMjc2NDU5OSAyLjcxNTYzMDU2LDIzLjY5MTkwMDEgQzIuNTgzNTAwMzUsMjMuMTU3OTQ0MSAyLjY4OTIwNDUyLDIyLjU0ODA4MjUgMi43MTU2MzA1NiwyMi40MzQ2NjA1IEMyLjU5MTQyODE3LDIyLjQ2OTU1OTYgMS45OTMzMTg3NSwyMi42MjY2MDU1IDEuNDY0Nzk3OSwyMi41MzE1MDU1IEMwLjg2NDkyNjc0OCwyMi40NDMzODUzIC0wLjU0MzU4MTI5OCwyMi4yNjAxNjUgMC4yMjI3NzM5MjQsMTguOTg4Mzc1NSIgaWQ9IkZpbGwtMTgiIHN0cm9rZT0iI0ZGRkZGRiIgZmlsbD0iIzc3Nzc3NyI+PC9wYXRoPiAgICAgICAgICAgICAgICA8L2c+ICAgICAgICAgICAgPC9nPiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+" alt="Total Attacks"/></div></div><div class="summary-widget-cell middle-cell"><div class="label">Relevant Attacks</div><div class="count small-label">4,287</div><div class="icon"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iNjVweCIgaGVpZ2h0PSI2NXB4IiB2aWV3Qm94PSIwIDAgNjUgNjUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiPiAgICAgICAgPHRpdGxlPlJlbGV2YW50X2F0dGFja3MxPC90aXRsZT4gICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+ICAgIDxkZWZzPjwvZGVmcz4gICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+ICAgICAgICA8ZyBpZD0iUmVsZXZhbnRfYXR0YWNrcyIgc2tldGNoOnR5cGU9Ik1TQXJ0Ym9hcmRHcm91cCIgZmlsbD0iIzc3Nzc3NyI+ICAgICAgICAgICAgPGcgaWQ9Ikljb25fUmVsZXZhbnRBdHRhY2tzIiBza2V0Y2g6dHlwZT0iTVNMYXllckdyb3VwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3LjAwMDAwMCwgMTAuMDAwMDAwKSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00OS45OTU3MzM5LDM3LjgzNDY5MzcgTDI5LjU4MjU3OSwzLjAzMTc3NzIxIEMyNy4zNTE0MTY0LC0xLjAxMDU5MjQgMjMuNjQ4NjQ1OCwtMS4wMTA1OTI0IDIxLjQxNzMxNzEsMy4wMzE3NzcyMSBMMS4wMDQxNjIxMywzNy44MzQ2OTM3IEMtMS4yOTE2MzQ5OSw0MS44MTgzODE2IDAuNDY1NjY2MTI5LDQ1IDUuMDg2NzkzMTEsNDUgTDQ1LjkxMzEwMyw0NSBDNTAuNTM0Mzk2Miw0NSA1Mi4yOTE2OTczLDQxLjgxODM4MTYgNDkuOTk1NzMzOSwzNy44MzQ2OTM3IEw0OS45OTU3MzM5LDM3LjgzNDY5MzcgWiBNMjUuNDMxOTA0Miw0MC45OTY1MjczIEMyNy4zNjA5ODkzLDQwLjk5NjUyNzMgMjguOTI0ODIxOCwzOS40MjgxNjM0IDI4LjkyNDgyMTgsMzcuNDkzNDg4NiBDMjguOTI0ODIxOCwzNS41NTg4MTM4IDI3LjM2MDk4OTMsMzMuOTkwNDUgMjUuNDMxOTA0MiwzMy45OTA0NSBDMjMuNTAyODE5MSwzMy45OTA0NSAyMS45Mzg5ODY2LDM1LjU1ODgxMzggMjEuOTM4OTg2NiwzNy40OTM0ODg2IEMyMS45Mzg5ODY2LDM5LjQyODE2MzQgMjMuNTAyODE5MSw0MC45OTY1MjczIDI1LjQzMTkwNDIsNDAuOTk2NTI3MyBaIE0yOC45MjQ4MjE4LDIzLjk4MTc2ODEgQzI4LjcyODU5MDUsMjcuNjc4Mjg3NyAyNy4yNzA4NzIsMzAuOTg3ODQ1NCAyNS45MzA4OTI0LDMwLjk4Nzg0NTQgQzI0LjU1MTY2NjUsMzAuOTg3ODQ1NCAyMy4xMDUxNjEzLDI3LjY3ODI4NzcgMjIuOTM2OTYzLDIzLjk4MTc2ODEgQzIyLjI3NTM4MzEsMTkuNTkzNDYzMSAyMS45Mzg5ODY2LDE0LjYzNzQ5MjQgMjEuOTM4OTg2NiwxMi45NzIyMTgxIEMyMS45Mzg5ODY2LDEwLjYxNTE1ODMgMjMuNzM1OTA0OSw4Ljk2ODc0NTMxIDI1LjkzMDg5MjQsOC45Njg3NDUzMSBDMjguMTI1ODgsOC45Njg3NDUzMSAyOS45MjI3OTgzLDEwLjYxNTE1ODMgMjkuOTIyNzk4MywxMi45NzIyMTgxIEMyOS45MjI3OTgzLDE0LjYzNzQ5MjQgMjkuNTc1MTg4NSwxOS41OTM0NjMxIDI4LjkyNDgyMTgsMjMuOTgxNzY4MSBMMjguOTI0ODIxOCwyMy45ODE3NjgxIFoiIGlkPSJTaGFwZSIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+PC9wYXRoPiAgICAgICAgICAgIDwvZz4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==" alt="Relevant Attacks"/></div></div><div class="summary-widget-cell last-cell"><div class="label">Hosts Targeted</div><div class="count">16</div><div class="icon"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iNjVweCIgaGVpZ2h0PSI2NXB4IiB2aWV3Qm94PSIwIDAgNjUgNjUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiPiAgICAgICAgPHRpdGxlPkhvc3RzX3RhcmdldGVkMTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz48L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHNrZXRjaDp0eXBlPSJNU1BhZ2UiPiAgICAgICAgPGcgaWQ9Ikhvc3RzX3RhcmdldGVkIiBza2V0Y2g6dHlwZT0iTVNBcnRib2FyZEdyb3VwIj4gICAgICAgICAgICA8ZyBpZD0iSWNvbl9Ib3N0c1RhcmdldGVkIiBza2V0Y2g6dHlwZT0iTVNMYXllckdyb3VwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMC4wMDAwMDAsIDEwLjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8ZyBpZD0iSWNvbl9Nb25pdG9yIiBmaWxsPSIjNzc3Nzc3IiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj4gICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00Mi4xODgwMjE4LDAgTDIuODE0Nzc5ODgsMCBDMS4yNjg0NzUwOCwwIDAsMS4yNjAwNzgyMyAwLDIuNzk5NTUyOTcgTDAsMzIuMjAwNDQ3IEMwLDMzLjczOTkyMTggMS4yNjU2Njg3MiwzNSAyLjgxMTk3MzUyLDM1IEw0Mi4xODgwMjE4LDM1IEM0My43MzQzMjY2LDM1IDQ0Ljk5OTk5NTQsMzMuNzM5OTIxOCA0NC45OTk5OTU0LDMyLjIwMDQ0NyBMNDQuOTk5OTk1NCwyLjc5OTU1Mjk3IEM0NS4wMDI4MDE3LDEuMjYwMDc4MjMgNDMuNzM0MzI2NiwwIDQyLjE4ODAyMTgsMCBMNDIuMTg4MDIxOCwwIFogTTQwLjk5NzE2MDIsNC4xMTU3NzA3NiBMNDAuOTk3MTYwMiwzMSBMNCwzMSBMNCw0IEw0MSw0IEw0MSw0LjExNTc3MDc2IEw0MC45OTcxNjAyLDQuMTE1NzcwNzYgWiIgaWQ9IlNoYXBlIj48L3BhdGg+ICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTEsNDIuMjk0MDU3OSBMMTEsNDUgTDM0LDQ1IEwzNCw0Mi4yOTQwNTc5IEMzMC42MTUxMTYsNDAuMjEyNzk4NCAyNi42OTM4MTM5LDM5IDIyLjUsMzkgQzE4LjMwNjE4NjEsMzkgMTQuMzg3NzUyNiw0MC4yMTI3OTg0IDExLDQyLjI5NDA1NzkgTDExLDQyLjI5NDA1NzkgWiIgaWQ9IlNoYXBlIj48L3BhdGg+ICAgICAgICAgICAgICAgIDwvZz4gICAgICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZS01NCIgZmlsbD0iI0ZGRkZGRiIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCIgeD0iNCIgeT0iNCIgd2lkdGg9IjM3IiBoZWlnaHQ9IjI3Ij48L3JlY3Q+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIGlkPSJJY29uX01pbm9yIiBza2V0Y2g6dHlwZT0iTVNMYXllckdyb3VwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMy4wMDAwMDAsIDE4LjAwMDAwMCkiIGZpbGw9IiM3Nzc3NzciPiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTkuNiwxNS4xMzYzNjM2IEwxMS42LDEuMjI3MjcyNzMgQzEwLjcyNTU5ODEsLTAuMzg4MjcyNTI2IDkuMjc0NDY3LC0wLjM4ODI3MjUyNiA4LjQsMS4yMjcyNzI3MyBMMC40LDE1LjEzNjM2MzYgQy0wLjQ5OTczMjQwNCwxNi43Mjg0NTY2IDAuMTg4OTYxMTg2LDE4IDIsMTggTDE4LDE4IEMxOS44MTExMDQsMTggMjAuNDk5Nzk3NSwxNi43Mjg0NTY2IDE5LjYsMTUuMTM2MzYzNiBMMTkuNiwxNS4xMzYzNjM2IFogTTkuMjg1NzE0MjksMTcgQzguNjc0OTQzNTcsMTcgOCwxNi4zMjQ2ODA5IDgsMTUuNzE0Mjg1NyBDOCwxNC42NzUzMTkxIDguNjc0OTQzNTcsMTQgOS4yODU3MTQyOSwxNCBDMTAuMzI1MDU2NCwxNCAxMSwxNC42NzUzMTkxIDExLDE1LjcxNDI4NTcgQzExLDE2LjMyNDY4MDkgMTAuMzI1MDU2NCwxNyA5LjI4NTcxNDI5LDE3IEw5LjI4NTcxNDI5LDE3IFogTTEwLjYyNSwxMC4xMzYzNjM2IEMxMC41NTEyNjQsMTEuNjQ3MjY0NCAxMC4wMDM1MTEyLDEzIDkuNSwxMyBDOC45ODE3NDE1NywxMyA4LjQzODIwMjI1LDExLjY0NzI2NDQgOC4zNzUsMTAuMTM2MzYzNiBDOC4xMjY0MDQ0OSw4LjM0MjcwNTE3IDgsNi4zMTcwMjEyOCA4LDUuNjM2MzYzNjQgQzgsNC42NzI5NDgzMyA4LjY3NTIxMDY3LDQgOS41LDQgQzEwLjMyNDc4OTMsNCAxMSw0LjY3Mjk0ODMzIDExLDUuNjM2MzYzNjQgQzExLDYuMzE3MDIxMjggMTAuODY5MzgyLDguMzQyNzA1MTcgMTAuNjI1LDEwLjEzNjM2MzYgTDEwLjYyNSwxMC4xMzYzNjM2IFoiIGlkPSJTaGFwZSIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+PC9wYXRoPiAgICAgICAgICAgIDwvZz4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==" alt="Hosts Targeted"/></div></div><div class="summary-widget-cell first-cell"><div class="label">Irrelevant Attacks</div><div class="count small-label">93.92%</div><div class="icon"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iNjVweCIgaGVpZ2h0PSI2NXB4IiB2aWV3Qm94PSIwIDAgNjUgNjUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiPiAgICAgICAgPHRpdGxlPklycmVsZXZhbnRfYXR0YWNrczE8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGRlZnM+PC9kZWZzPiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4gICAgICAgIDxnIGlkPSJJcnJlbGV2YW50X2F0dGFja3MiIHNrZXRjaDp0eXBlPSJNU0FydGJvYXJkR3JvdXAiIGZpbGw9IiM3Nzc3NzciPiAgICAgICAgICAgIDxnIGlkPSJJY29uX0lycmVsZXZhbnRBdHRhY2tzIiBza2V0Y2g6dHlwZT0iTVNMYXllckdyb3VwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMC4wMDAwMDAsIDEwLjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8ZyBpZD0iR3JvdXAiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTI2LjU2MDE5NTUsMTcuMzczNDA0MiBMMjIuMjgzMzA3MiwyMS44NzU5MzE0IEwxNC40NDE4ODM0LDEzLjYyMzcyOTkgQzEzLjY1NDY5MiwxMi43OTIwOSAxMi4zNzY4OTE5LDEyLjc5MjA5IDExLjU5MjQ3MjQsMTMuNjIzNzI5OSBDMTAuODAyNTA5MiwxNC40NTI0NTE3IDEwLjgwMjUwOTIsMTUuNzk0NzQ3NSAxMS41OTI0NzI0LDE2LjYyMzQ2OTMgTDIwLjg1ODYwMTcsMjYuMzc4NDU4NyBDMjEuNjQ1NzkzMSwyNy4yMDcxODA0IDIyLjkyMDgyMTMsMjcuMjA3MTgwNCAyMy43MDgwMTI3LDI2LjM3ODQ1ODcgTDI5LjQwOTYwNjUsMjAuMzc2MDYxNyBDMzAuMTk2Nzk3OCwxOS41NDczMzk5IDMwLjE5Njc5NzgsMTguMjA1MDQ0IDI5LjQwOTYwNjUsMTcuMzc2MzIyMiBDMjguNjIyNDE1MSwxNi41NDQ2ODI0IDI3LjM0NzM4NjgsMTYuNTQ0NjgyNCAyNi41NjAxOTU1LDE3LjM3MzQwNDIgTDI2LjU2MDE5NTUsMTcuMzczNDA0MiBaIiBpZD0iU2hhcGUiPjwvcGF0aD4gICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0yMi41LDAgQzEwLjA3MTU2MjUsMCAwLDEwLjA3MTU2MjUgMCwyMi41IEMwLDM0LjkyMjgxMjUgMTAuMDcxNTYyNSw0NSAyMi41LDQ1IEMzNC45Mjg0Mzc1LDQ1IDQ1LDM0LjkyMjgxMjUgNDUsMjIuNSBDNDUsMTAuMDcxNTYyNSAzNC45Mjg0Mzc1LDAgMjIuNSwwIEwyMi41LDAgWiBNMjIuNSw0MC43MTQyODU3IEMxMi40NTYyMDQ4LDQwLjcxNDI4NTcgNC4yODU3MTQyOSwzMi41NDM3OTUyIDQuMjg1NzE0MjksMjIuNSBDNC4yODU3MTQyOSwxMi40NTYyMDQ4IDEyLjQ1NjIwNDgsNC4yODU3MTQyOSAyMi41LDQuMjg1NzE0MjkgQzMyLjU0Mzc5NTIsNC4yODU3MTQyOSA0MC43MTQyODU3LDEyLjQ1NjIwNDggNDAuNzE0Mjg1NywyMi41IEM0MC43MTQyODU3LDMyLjU0Mzc5NTIgMzIuNTQzNzk1Miw0MC43MTQyODU3IDIyLjUsNDAuNzE0Mjg1NyBMMjIuNSw0MC43MTQyODU3IFoiIGlkPSJTaGFwZSI+PC9wYXRoPiAgICAgICAgICAgICAgICA8L2c+ICAgICAgICAgICAgPC9nPiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+" alt="Irrelevant Attacks"/></div></div><div class="summary-widget-cell middle-cell"><div class="label">Events Requiring Attention</div><div class="count small-label">6.08%</div><div class="icon"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iNjVweCIgaGVpZ2h0PSI2NXB4IiB2aWV3Qm94PSIwIDAgNjUgNjUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiPiAgICAgICAgPHRpdGxlPkV2ZW50c19yZXF1aXJpbmdfYXR0ZW50aW9uMTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz48L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHNrZXRjaDp0eXBlPSJNU1BhZ2UiPiAgICAgICAgPGcgaWQ9IkV2ZW50c19yZXF1aXJpbmdfYXR0ZW50aW9uIiBza2V0Y2g6dHlwZT0iTVNBcnRib2FyZEdyb3VwIiBmaWxsPSIjNzc3Nzc3Ij4gICAgICAgICAgICA8ZyBpZD0iSWNvbl9FdmVudHNSZXF1cmluZ0F0dGVudGlvbiIgc2tldGNoOnR5cGU9Ik1TTGF5ZXJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAuMDAwMDAwLCAxMy4wMDAwMDApIj4gICAgICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj4gICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0yMiw2IEMxMy4xNjI3NTgxLDYgNiwxMy4xNjI3NTgxIDYsMjIgQzYsMzAuODM3MjQxOSAxMy4xNjI3NTgxLDM4IDIyLDM4IEMzMC44MzcyNDE5LDM4IDM4LDMwLjgzNzI0MTkgMzgsMjIgQzM4LDEzLjE2Mjc1ODEgMzAuODM3MjQxOSw2IDIyLDYgTDIyLDYgWiBNMjIsMzUgQzE0LjgxODg1OCwzNSA5LDI5LjE3ODkzNDcgOSwyMi4wMDE0MjE5IEM5LDE0LjgyMzkwOSAxNC44MjE3MDIsOSAyMiw5IEMyOS4xNzgyOTgsOSAzNSwxNC44MjEwNjUzIDM1LDIxLjk5ODU3ODEgQzM1LDI5LjE3NjA5MSAyOS4xODExNDIsMzUgMjIsMzUgTDIyLDM1IFoiIGlkPSJTaGFwZSI+PC9wYXRoPiAgICAgICAgICAgICAgICAgICAgPGcgaWQ9IlNoYXBlIj4gICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMi41NzAyODE1LDIuNTc1NDI0MzQgQy0wLjg1NzcxNjEwNSw2LjAwNjQ1NDcgLTAuODU3NzE2MTA1LDExLjU2ODk2OTYgMi41NzYwMTg3MywxNSBMMTUsMi41NzU0MjQzNCBDMTEuNTY5MTMzOCwtMC44NTg0NzQ3NzkgNi4wMDQwMTYzMywtMC44NTg0NzQ3NzkgMi41NzAyODE1LDIuNTc1NDI0MzQgTDIuNTcwMjgxNSwyLjU3NTQyNDM0IFoiPjwvcGF0aD4gICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDIuNDI2MzU4MSwyLjU3MzY0MTkzIEMzOC45OTc3MDQ3LC0wLjg1Nzg4MDY0MyAzMy40MzE1MjI2LC0wLjg1Nzg4MDY0MyAzMCwyLjU3MzY0MTkzIEw0Mi40MjYzNTgxLDE1IEM0NS44NTc4ODA2LDExLjU2ODQ3NzQgNDUuODU3ODgwNiw2LjAwNTE2NDUgNDIuNDI2MzU4MSwyLjU3MzY0MTkzIEw0Mi40MjYzNTgxLDIuNTczNjQxOTMgWiI+PC9wYXRoPiAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0yOS41MzI3Mjk4LDE0LjQ4ODA2MjEgQzI4LjkxMTU1OTksMTMuODM3MzEyNiAyNy45MDMyMDMzLDEzLjgzNzMxMjYgMjcuMjgyMDMzNCwxNC40ODgwNjIxIEwyMS4wOTI2MTg0LDIwLjk3MjIxMTIgTDE3LjcxNjU3MzgsMTcuNDM1NDAyNiBDMTcuMDk1NDAzOSwxNi43ODE3MzUgMTYuMDg3MDQ3NCwxNi43ODQ2NTMxIDE1LjQ2NTg3NzQsMTcuNDM1NDAyNiBDMTQuODQ0NzA3NSwxOC4wODYxNTIgMTQuODQ0NzA3NSwxOS4xNDI1MjU1IDE1LjQ2NTg3NzQsMTkuNzkzMjc1IEwxOS45NjcyNzAyLDI0LjUxMTkzNzkgQzIwLjU4ODQ0MDEsMjUuMTYyNjg3NCAyMS41OTY3OTY3LDI1LjE2MjY4NzQgMjIuMjE3OTY2NiwyNC41MTE5Mzc5IEwyOS41MzU1MTUzLDE2Ljg0ODg1MjYgQzMwLjE1Mzg5OTcsMTYuMTk1MTg1IDMwLjE1NjY4NTIsMTUuMTQxNzI5NyAyOS41MzI3Mjk4LDE0LjQ4ODA2MjEgTDI5LjUzMjcyOTgsMTQuNDg4MDYyMSBaIj48L3BhdGg+ICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTEwLjI2NzI0NzgsMzcuNTMxOTEyMiBDOS43OTg2MDc0NiwzOC4yMzk5NDEyIDkuOTYzNDA0MDYsMzkuMjE2OTExNSAxMC42Mjc3NDAzLDM5LjcxNjM3MzkgQzExLjI5NDY1MTYsNDAuMjEzMDkxOSAxMi4yMTEzMzI2LDQwLjA0MDIwMTEgMTIuNjc3Mzk4LDM5LjMzMjE3MjEgTDE1LDM1Ljc5NzUxNTUgTDEyLjU4OTg0OTgsMzQgTDEwLjI2NzI0NzgsMzcuNTMxOTEyMiBMMTAuMjY3MjQ3OCwzNy41MzE5MTIyIFoiPjwvcGF0aD4gICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMjQsMS44NjUxNDIzMiBDMjQsMC44MzYyMTA5MTkgMjMuMzI4MDg0LDAgMjIuNTAxMzEyMywwIEMyMS42NjkyOTEzLC0zLjYyNjQ4Njc4ZS0xNiAyMSwwLjgzNjIxMDkxOSAyMSwxLjg2NTE0MjMyIEwyMSw3IEwyNCw2Ljk5NjczMzU1IEwyNCwxLjg2NTE0MjMyIEwyNCwxLjg2NTE0MjMyIFoiPjwvcGF0aD4gICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMzIuNDExMjM0NSwzNCBMMzAsMzUuNzk3NTE1NSBMMzIuMzIzNjQ2OSwzOS4zMzIxNzIxIEMzMi43ODk5MjIsNDAuMDQwMjAxMSAzMy43MDcwMTU1LDQwLjIxMzA5MTkgMzQuMzc0MjI2NywzOS43MTYzNzM5IEMzNS4wMzg4NjE5LDM5LjIxOTY1NTggMzUuMTk4NTgwNCwzOC4yNDI2ODU1IDM0LjczNDg4MTUsMzcuNTMxOTEyMiBMMzIuNDExMjM0NSwzNCBMMzIuNDExMjM0NSwzNCBaIj48L3BhdGg+ICAgICAgICAgICAgICAgICAgICA8L2c+ICAgICAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8L2c+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=" alt="Events Requiring Attention"/></div></div><div class="summary-widget-cell last-cell"><div class="label">Hosts Connected to CnC Servers</div><div class="count">60</div><div class="icon"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iNjVweCIgaGVpZ2h0PSI2NXB4IiB2aWV3Qm94PSIwIDAgNjUgNjUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiPiAgICAgICAgPHRpdGxlPkhvc3RzX2Nvbm5lY3RlZF90b19jbmNfc2VydmVyczE8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGRlZnM+PC9kZWZzPiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4gICAgICAgIDxnIGlkPSJIb3N0c19jb25uZWN0ZWRfdG9fY25jX3NlcnZlcnMiIHNrZXRjaDp0eXBlPSJNU0FydGJvYXJkR3JvdXAiPiAgICAgICAgICAgIDxnIGlkPSJJY29uX0hvc3RzQ29ubmVjdGVkVG9DTkNTZXJ2ZXJzIiBza2V0Y2g6dHlwZT0iTVNMYXllckdyb3VwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNC4wMDAwMDAsIDEwLjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8ZyBpZD0iSWNvbl9TdW1tYXJ5Ij4gICAgICAgICAgICAgICAgICAgIDxnIGlkPSJHcm91cCIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+ICAgICAgICAgICAgICAgICAgICAgICAgPGcgaWQ9IlNoYXBlIiBmaWxsPSIjNzc3Nzc3Ij4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTMyLjExODg0NjIsMCBMMTIuNjQyNjE1NCwwIEwwLDEyLjQ5MzEyNSBMMCw0MC4xNzY1NjI1IEMwLDQyLjgyODc1IDIuMTk0Mzg0NjIsNDUgNC44NzgzMDc2OSw0NSBMNC44NzgzMDc2OSw0NSBMMTAuNTU2Mzg0Niw0NSBMMjYuNDQzNjE1NCw0NSBMMzIuMTI0NTM4NSw0NSBMMzIuMTI0NTM4NSw0NSBDMzQuODAyNzY5Miw0NSAzNyw0Mi44Mjg3NSAzNyw0MC4xNzY1NjI1IEwzNywyOC45NDkwNjI1IEwzNywyNC4wNDk2ODc1IEwzNyw0LjgyMDYyNSBDMzcsMi4xNjg0Mzc1IDM0LjgwNTYxNTQsMCAzMi4xMTg4NDYyLDAgTDMyLjExODg0NjIsMCBaIE0zMiw0MSBDMzEuNzM5Niw0MC45MDAzODQ2IDMxLjYwMjQsNDEgMzEuNDA2NCw0MSBMMjUuODE3Niw0MSBMMTAuMTg1Miw0MSBMNC41OTkyLDQxIEM0LjQwMDQsNDEgNC4yNjMyLDQwLjkwMDM4NDYgNC4xODIsNDAuODE1IEM0LjA5OCw0MC43MzI0NjE1IDQsNDAuNTg0NDYxNSA0LDQwLjM4NTIzMDggTDQsMTQgTDE0LDE0IEwxNCw0IEwzMS40MDA4LDQgQzMxLjcxNDQsNCAzMiw0LjI4MTc2OTIzIDMyLDQuNjA2MjMwNzcgTDMyLDMwLjAzMzc2OTIgTDMyLDQwLjM4ODA3NjkgQzMyLDQwLjU4NDQ2MTUgMzEuOTAyLDQwLjczMjQ2MTUgMzEuODIwOCw0MC44MTUgTDMyLDQxIFoiPjwvcGF0aD4gICAgICAgICAgICAgICAgICAgICAgICA8L2c+ICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTQsMTQgTDE0LDE0IEMxNCwxNCAxNCw0IDE0LDQgTDMyLDQgTDMyLDQxIEw0LDQxIEM0LDQxIDMuOTk5OTk5OTYsMTQgNCwxNCBaIiBpZD0iUmVjdGFuZ2xlLTU0IiBmaWxsPSIjRkZGRkZGIj48L3BhdGg+ICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTI4Ljc2MTMyNzEsMjMgTDcuMjQxNTI2OTQsMjMgQzYuNTU2NTQ2NTYsMjMgNiwyMy4zOSA2LDIzLjg2OCBDNiwyNC4zNDYgNi41NTM2OTI0NywyNC43MzggNy4yNDE1MjY5NCwyNC43MzggTDI4Ljc2MTMyNzEsMjQuNzM4IEMyOS40NDYzMDc1LDI0LjczOCAzMCwyNC4zNDggMzAsMjMuODY4IEMzMCwyMy4zODggMjkuNDQ2MzA3NSwyMyAyOC43NjEzMjcxLDIzIEwyOC43NjEzMjcxLDIzIFoiIGlkPSJTaGFwZSIgZmlsbD0iIzc3Nzc3NyI+PC9wYXRoPiAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0yOC43NjEzMjcxLDM2Ljc0IEw3LjI0MTUyNjk0LDM2Ljc0IEM2LjU1NjU0NjU2LDM2Ljc0IDYsMzYuMzUyIDYsMzUuODcyIEM2LDM1LjM5MiA2LjU1MzY5MjQ3LDM1IDcuMjQxNTI2OTQsMzUgTDI4Ljc2MTMyNzEsMzUgQzI5LjQ0NjMwNzUsMzUgMzAsMzUuMzkgMzAsMzUuODcyIEMzMCwzNi4zNSAyOS40NDYzMDc1LDM2Ljc0IDI4Ljc2MTMyNzEsMzYuNzQgTDI4Ljc2MTMyNzEsMzYuNzQgWiIgaWQ9IlNoYXBlIiBmaWxsPSIjNzc3Nzc3Ij48L3BhdGg+ICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTI4Ljc2MTMyNzEsMzAuNzM4IEw3LjI0MTUyNjk0LDMwLjczOCBDNi41NTY1NDY1NiwzMC43MzggNiwzMC4zNSA2LDI5Ljg3IEM2LDI5LjM5IDYuNTUzNjkyNDcsMjkgNy4yNDE1MjY5NCwyOSBMMjguNzYxMzI3MSwyOSBDMjkuNDQ2MzA3NSwyOSAzMCwyOS4zOSAzMCwyOS44NyBDMzAsMzAuMzQ4IDI5LjQ0NjMwNzUsMzAuNzM4IDI4Ljc2MTMyNzEsMzAuNzM4IEwyOC43NjEzMjcxLDMwLjczOCBaIiBpZD0iU2hhcGUiIGZpbGw9IiM3Nzc3NzciPjwvcGF0aD4gICAgICAgICAgICAgICAgICAgIDwvZz4gICAgICAgICAgICAgICAgICAgIDx0ZXh0IGlkPSJQREYiIHNrZXRjaDp0eXBlPSJNU1RleHRMYXllciIgZm9udC1mYW1pbHk9IkNpc2NvU2FucyIgZm9udC1zaXplPSI4IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzc3Nzc3NyI+ICAgICAgICAgICAgICAgICAgICAgICAgPHRzcGFuIHg9IjE1IiB5PSIxMiI+UERGPC90c3Bhbj4gICAgICAgICAgICAgICAgICAgIDwvdGV4dD4gICAgICAgICAgICAgICAgICAgIDx0ZXh0IGlkPSJQUFQiIHNrZXRjaDp0eXBlPSJNU1RleHRMYXllciIgZm9udC1mYW1pbHk9IkNpc2NvU2FucyIgZm9udC1zaXplPSI4IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzc3Nzc3NyI+ICAgICAgICAgICAgICAgICAgICAgICAgPHRzcGFuIHg9IjE1IiB5PSIyMSI+UFBUPC90c3Bhbj4gICAgICAgICAgICAgICAgICAgIDwvdGV4dD4gICAgICAgICAgICAgICAgPC9nPiAgICAgICAgICAgICAgICA8ZyBpZD0iSWNvbl9Ta2VsZXRvbiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjIuMDAwMDAwLCAyNy4wMDAwMDApIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj4gICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xNC4xMTM1OTEzLDYuMTAzNTM0NDkgQzE1LjA3MjE4MSw2LjIyMTk3MTY3IDE2LjAwNDk1Myw2LjQ0Mzk0MzMzIDE2Ljg3MTA5ODMsNi44MjkwNjAyNSBDMTguMzM2ODgyOCw3LjQ2NTE2OTg2IDE5LjM3NzkyMjksOC42ODY0MDYyIDIwLjA1MjUxNjksOS45NzQzMTI0NyBDMjAuNDc3MjYxMiwxMC43NjY1MDgyIDIwLjgyNzA1MDcsMTEuNTg3NzI0OSAyMC45NTE5NzU1LDEyLjQ1MzY0OTcgQzIwLjk5MzYxNzEsMTIuNzI3Mzg4NiAyMS4wMTAyNzM4LDEzLjAwODk3MSAyMC45OTM2MTcxLDEzLjI5NzYxMjYgQzIwLjkxNzgyOTQsMTQuNzExMDE1MiAyMC4wMDI1NDY5LDE1Ljk2MTI3MjYgMTkuMDExNDc2OCwxNy4wMTIzMDQ1IEMxOC40Mjg0OTQzLDE3LjYzNDI5NTggMTcuODIxMzU5NywxOC4yNDA2IDE3LjEyOTI3NjMsMTguNzUxOTk3NiBDMTcuMTI5Mjc2MywxOC43NTE5OTc2IDE3LjA3OTMwNjMsMjAuMTY1NDAwMyAxNi4xMzgyMDYxLDIxLjIwMjMxMzggQzE1LjYyMTg1MDIsMjEuNzY0Njk0MyAxNC4zMTQzMDM4LDIxLjk4NjY2NiAxMi45OTc1OTYzLDIyIEMxMS42OTAwNSwyMS45ODY2NjYgMTAuMzgzMzM2NCwyMS43NjQ2OTQzIDkuODU4NjUyMjIsMjEuMjAyMzEzOCBDOC45MjU4ODAyOSwyMC4xNjYxODQ2IDguODY4NDE0ODcsMTguNzUxOTk3NiA4Ljg2ODQxNDg3LDE4Ljc1MTk5NzYgQzguMTgzODI2OSwxOC4yNDA2IDcuNTc2NjkyMzIsMTcuNjM0Mjk1OCA2Ljk4NTM4MTU0LDE3LjAxMjMwNDUgQzYuMDAyNjM5NjksMTUuOTYxMjcyNiA1LjA3ODE5NjA4LDE0LjcxMTAxNTIgNS4wMDMyNDExOSwxMy4yOTc2MTI2IEM0Ljk5NDA4MDA0LDEzLjAwODk3MSA1LjAwMzI0MTE5LDEyLjcyNzM4ODYgNS4wNDQ4ODI4LDEyLjQ1MzY0OTcgQzUuMTc4MTM1OTMsMTEuNTg3NzI0OSA1LjUyNzkyNTQsMTAuNzY2NTA4MiA1Ljk0NDM0MTQ0LDkuOTc0MzEyNDcgQzYuNjI3MjYzNzUsOC42ODY0MDYyIDcuNjY4MzAzODUsNy40NjUxNjk4NiA5LjEzNDA4ODMxLDYuODI5MDYwMjUgQzEwLjAwMDIzMzcsNi40NDM5NDMzMyAxMC45MzMwMDU2LDYuMjIxOTcxNjcgMTEuODgyNDM0Miw2LjEwMzUzNDQ5IEMxMi4yNTcyMDg2LDYuMDU5NjEwNzcgMTIuNjE2MTU5Miw2LjAyMTk2MTg2IDEyLjk5MDEwMDgsNiBDMTMuMzgxNTMxOSw2LjAyMTk2MTg2IDEzLjc0Nzk3OCw2LjA1OTYxMDc3IDE0LjExMzU5MTMsNi4xMDM1MzQ0OSBaIiBpZD0iRmlsbC0xIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSIjNzc3Nzc3Ij48L3BhdGg+ICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTQuNTc3NzMxOSwxNC4zNTY4MDM1IEMxNC45NDkzMzQ0LDE1LjI0Mjg2NSAxNS42NzEwMTgxLDE2LjU3MTI3ODkgMTYuODcxOTExMiwxNS43MzQwNjYxIEMxNy41MzgzNTY3LDE1LjI3MDY4MTcgMTcuNjk2ODk3NSwxNC4wNzI1MzEgMTcuMjM5MjA5NCwxMy40NjY2NzEyIEMxNi41NDgzNzMxLDEyLjU1NDgyODMgMTQuMDI4MjE5MywxMy4wNDY3MDc4IDE0LjU3NzczMTksMTQuMzU2ODAzNSIgaWQ9IkZpbGwtMyIgZmlsbD0iI0ZGRkZGRiI+PC9wYXRoPiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTExLjQyMjI5MSwxNC4zNTY4MDM1IEMxMS4wNTA3MTA1LDE1LjI0Mjg2NSAxMC4zMjkwNjk1LDE2LjU3MTI3ODkgOS4xMjgyNDc0MywxNS43MzQwNjYxIEM4LjQ2MTEyNDA3LDE1LjI3MDY4MTcgOC4zMDMzMDk5NCwxNC4wNzI1MzEgOC43NjA5NzA5MSwxMy40NjY2NzEyIEM5LjQ1MTA0OTA2LDEyLjU1NDgyODMgMTEuOTcxNzcxMSwxMy4wNDY3MDc4IDExLjQyMjI5MSwxNC4zNTY4MDM1IiBpZD0iRmlsbC01IiBmaWxsPSIjRkZGRkZGIj48L3BhdGg+ICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTMuNzk0NjUyNCwxNy44MjQ1NjE0IEMxMy42MjUwMjY1LDE3LjkyOTgyNDYgMTMuMzAyNzM3MiwxNy45OTEyMjgxIDEyLjk5OTE5NjEsMTggQzEyLjY5NjU0NzgsMTcuOTkxMjI4MSAxMi4zNzUxNTEzLDE3LjkyOTgyNDYgMTIuMjA1NTI1NCwxNy44MjQ1NjE0IEMxMS40NTU2MDAzLDE3LjM2NzU0MzkgMTIuOTk5MTk2MSwxNiAxMi45OTkxOTYxLDE2IEMxMi45OTkxOTYxLDE2IDE0LjU0NDU3NzUsMTcuMzY3NTQzOSAxMy43OTQ2NTI0LDE3LjgyNDU2MTQiIGlkPSJGaWxsLTciIGZpbGw9IiNGRkZGRkYiPjwvcGF0aD4gICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0yNS43NzcxODQyLDYuMDEwNzUxOTggQzI1LjAyODQ0NjMsOS4yODI1NDE0OCAyMi4xMjI0NjI2LDYuNzc4NTMxOTIgMjIuMTIyNDYyNiw2Ljc3ODUzMTkyIEwyMS4wODIxNTc0LDggTDE5LjQ4Nzc4NjIsNi41NjkxMzczOSBMMTgsNS4xNjQ0NDkxIEwxOS4xNDUxMjg1LDQuMDM4OTUzNTEgQzE5LjE0NTEyODUsNC4wMzg5NTM1MSAxNi4zODgwMTE0LDEuMzc3ODk4MDUgMTkuNjIwNzk3MywwLjM2NTgyNDQ5NSBDMjIuODQzODkzNSwtMC42NTQ5NzM4MyAyMy4xNDQyNjk1LDAuNzIzNTQwMTQ3IDIzLjI4NDMyNzYsMS4zMDgwOTk4NyBDMjMuNDE2NDU3OCwxLjg0MDMxMDk2IDIzLjMxMDc1MzYsMi40NTEwNDUgMjMuMjg0MzI3NiwyLjU2NDQ2NzA0IEMyMy40MDg1MywyLjUyOTU2Nzk1IDI0LjAwNjYzOTQsMi4zNzI1MjIwNiAyNC41MzUxNjAyLDIuNDY4NDk0NTUgQzI1LjEzNTAzMTQsMi41NTU3NDIyNyAyNi41NDM1Mzk0LDIuNzM4OTYyNDggMjUuNzc3MTg0Miw2LjAxMDc1MTk4IiBpZD0iRmlsbC05IiBzdHJva2U9IiNGRkZGRkYiIGZpbGw9IiM3Nzc3NzciPjwvcGF0aD4gICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLjIyMjc3MzkyNCw2LjAxMDc1MTk4IEMwLjk3MTUxMTc4NCw5LjI4MjU0MTQ4IDMuODc3NDk1NTUsNi43Nzg1MzE5MiAzLjg3NzQ5NTU1LDYuNzc4NTMxOTIgTDQuOTE3ODAwNzQsOCBMNi41MTIxNzE5NSw2LjU2OTEzNzM5IEw3Ljk5OTk1ODEyLDUuMTY0NDQ5MSBMNi44NTQ4Mjk2Myw0LjAzODk1MzUxIEM2Ljg1NDgyOTYzLDQuMDM4OTUzNTEgOS42MTE5NDY2OSwxLjM3Nzg5ODA1IDYuMzc5MTYwODcsMC4zNjU4MjQ0OTUgQzMuMTU2MDY0NiwtMC42NTQ5NzM4MyAyLjg1NTY4ODU5LDAuNzIzNTQwMTQ3IDIuNzE1NjMwNTYsMS4zMDgwOTk4NyBDMi41ODM1MDAzNSwxLjg0MDMxMDk2IDIuNjg5MjA0NTIsMi40NTEwNDUgMi43MTU2MzA1NiwyLjU2NDQ2NzA0IEMyLjU5MTQyODE3LDIuNTI5NTY3OTUgMS45OTMzMTg3NSwyLjM3MjUyMjA2IDEuNDY0Nzk3OSwyLjQ2ODQ5NDU1IEMwLjg2NDkyNjc0OCwyLjU1NTc0MjI3IC0wLjU0MzU4MTI5OCwyLjczODk2MjQ4IDAuMjIyNzczOTI0LDYuMDEwNzUxOTgiIGlkPSJGaWxsLTEyIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSIjNzc3Nzc3Ij48L3BhdGg+ICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMjUuNzc3MTg0MiwxOC45ODgzNzU1IEMyNS4wMjg0NDYzLDE1LjcxNjU4NiAyMi4xMjI0NjI2LDE4LjIyMDU5NTYgMjIuMTIyNDYyNiwxOC4yMjA1OTU2IEwyMS4wODIxNTc0LDE3IEwxOS40ODc3ODYyLDE4LjQyOTExNzcgTDE4LDE5LjgzNTU1MDkgTDE5LjE0NTEyODUsMjAuOTYwMTc0IEMxOS4xNDUxMjg1LDIwLjk2MDE3NCAxNi4zODgwMTE0LDIzLjYyMjEwMiAxOS42MjA3OTczLDI0LjYzNDE3NTUgQzIyLjg0Mzg5MzUsMjUuNjU0OTczOCAyMy4xNDQyNjk1LDI0LjI3NjQ1OTkgMjMuMjg0MzI3NiwyMy42OTE5MDAxIEMyMy40MTY0NTc4LDIzLjE1Nzk0NDEgMjMuMzEwNzUzNiwyMi41NDgwODI1IDIzLjI4NDMyNzYsMjIuNDM0NjYwNSBDMjMuNDA4NTMsMjIuNDY5NTU5NiAyNC4wMDY2Mzk0LDIyLjYyNjYwNTUgMjQuNTM1MTYwMiwyMi41MzE1MDU1IEMyNS4xMzUwMzE0LDIyLjQ0MzM4NTMgMjYuNTQzNTM5NCwyMi4yNjAxNjUgMjUuNzc3MTg0MiwxOC45ODgzNzU1IiBpZD0iRmlsbC0xNSIgc3Ryb2tlPSIjRkZGRkZGIiBmaWxsPSIjNzc3Nzc3Ij48L3BhdGg+ICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMC4yMjI3NzM5MjQsMTguOTg4Mzc1NSBDMC45NzE1MTE3ODQsMTUuNzE2NTg2IDMuODc3NDk1NTUsMTguMjIwNTk1NiAzLjg3NzQ5NTU1LDE4LjIyMDU5NTYgTDQuOTE3ODAwNzQsMTcgTDYuNTEyMTcxOTUsMTguNDI5MTE3NyBMNy45OTk5NTgxMiwxOS44MzU1NTA5IEw2Ljg1NDgyOTYzLDIwLjk2MDE3NCBDNi44NTQ4Mjk2MywyMC45NjAxNzQgOS42MTE5NDY2OSwyMy42MjIxMDIgNi4zNzkxNjA4NywyNC42MzQxNzU1IEMzLjE1NjA2NDYsMjUuNjU0OTczOCAyLjg1NTY4ODU5LDI0LjI3NjQ1OTkgMi43MTU2MzA1NiwyMy42OTE5MDAxIEMyLjU4MzUwMDM1LDIzLjE1Nzk0NDEgMi42ODkyMDQ1MiwyMi41NDgwODI1IDIuNzE1NjMwNTYsMjIuNDM0NjYwNSBDMi41OTE0MjgxNywyMi40Njk1NTk2IDEuOTkzMzE4NzUsMjIuNjI2NjA1NSAxLjQ2NDc5NzksMjIuNTMxNTA1NSBDMC44NjQ5MjY3NDgsMjIuNDQzMzg1MyAtMC41NDM1ODEyOTgsMjIuMjYwMTY1IDAuMjIyNzczOTI0LDE4Ljk4ODM3NTUiIGlkPSJGaWxsLTE4IiBzdHJva2U9IiNGRkZGRkYiIGZpbGw9IiM3Nzc3NzciPjwvcGF0aD4gICAgICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDwvZz4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==" alt="Hosts Connected to CnC Servers"/></div></div></div></div><div class="widget-group"><div class="text-widget"><h2>Relevant Attacks Carry the Following Risks</h2></div><div class="table-widget"><table><tr><th>Classification</th><th>Count</th></tr><tr><td>Not Suspicious Traffic</td><td>42,616</td></tr><tr><td>Potentially Bad Traffic</td><td>17,686</td></tr><tr><td>A Network Trojan was Detected</td><td>4,502</td></tr><tr><td>Unknown Traffic</td><td>1,803</td></tr><tr><td>Attempted Administrator Privilege Gain</td><td>1,465</td></tr></table></div></div><div class="widget-group"><div class="text-widget"><b>Cisco recommends that ASU deploy Cisco Firepower Appliances to:</b> <ol> <li><b>Establish continual visibility into its network attack risks</b></li> <li><b>Implement automated protections in order to mitigate this risk going forward</b></li> </ol></div></div>
+            </div>
+            
+        </section>
+        
+        <div class="pagebreak"></div>
+        
+    
+        <section>
+            
+            
+            <div class="icon2">
+                <h1><img src="data:image/png;base64,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" alt="Logo" />
+</h1>
+            </div>
+            <div class="title content2">
+                <h1>II. Assessment Results</h1>
+            </div>
+            <hr/>
+            <div class="content2">
+                <div class="widget-group"><div class="text-widget"><h2>Identifying Critical Attacks Using Impact Analysis</h2></div><div class="text-widget">Of the 70,509 total attacks on your network, 4,287 (6.08%) of them were considered high impact. That means they targeted machines that were likely vulnerable to these attacks. These events are the most critical to investigate, and Cisco automatically identifies them for you. Cisco identifies high impact events automatically by correlating attacks with target risk, which is determined by passively profiling your network devices and their vulnerabilities in real time. This saves time and money over traditional solutions, which require you to qualify all events manually or import scan data from other systems. If a staff member's time is worth $75 per hour and each attack takes 10 seconds to qualify, then each attack costs $0.21 to manually qualify. The difference in qualification time and cost between Cisco and traditional solutions is substantial.</div><div class="pie-chart-widget"><img alt="Pie Chart" src="data:image/png;base64,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" /></div><div class="table-widget"><table><tr><th style='width:40%'>Attacks to Qualify / Year</th><th style='width:20%'>Cost to Qualify</th><th style='width:40%'>Cost to Qualify All Attacks</th></tr><tr><td class='middle'>830,224<br>estimated total attacks</td><td class='middle'>$0.21</td><td class='middle'>$174,347.00</td></tr><tr><td class='middle'>50,478<br>estimated high impact attacks</td><td class='middle'>$0.21</td><td class='middle'>$10,600.43</td></tr></table></div><div class="text-widget align-right"><b>Year #1 Cost Savings: $163,746.57</b><br> <b>Year #5 Cost Savings: $818,732.86</b></div></div><div class="widget-group"><div class="text-widget"><h2>High Impact Attacks</h2>The following attacks are very important to investigate because they directly target machines that have been identified as potentially vulnerable. The target machine's operating system version, running services, and potential vulnerabilities all match what the threat is designed to attack.</div><div class="table-widget"><table><tr><th style='width:30%'>Event Type</th><th style='width:40%'>Details</th><th style='width:30%'>Potentially Vulnerable Hosts</th></tr><tr><td>A Network Trojan was Detected</td><td>MALWARE-OTHER GPON exploit download attempt (1:46840:1)</td><td>60</td></tr><tr><td>A Network Trojan was Detected</td><td>MALWARE-CNC User-Agent known malicious user agent - User-Agent User-Agent Mozilla (1:30918:2)</td><td>28</td></tr><tr><td>A Network Trojan was Detected</td><td>MALWARE-BACKDOOR JSP webshell backdoor detected (1:39058:2)</td><td>9</td></tr><tr><td>A Network Trojan was Detected</td><td>MALWARE-CNC Win.Adware.BrowserAssistant variant outbound connection (1:51593:1)</td><td>8</td></tr><tr><td>A Network Trojan was Detected</td><td>MALWARE-CNC Win.Adware.Taplika toolbar download attempt (1:46963:1)</td><td>8</td></tr></table></div></div><div class="widget-group"><div class="text-widget"><h2>Hosts at High Risk</h2>0.13, 0.84% of your monitored hosts have been targeted with high impact attacks during the assessment period. They are at high risk of infection. The attacks should be investigated and the machines assessed to ensure proper controls are in place. An additional {2}% of the machines discovered on your network were targeted with some form of attack.</div><div class="pie-chart-widget"><img alt="Pie Chart" src="data:image/png;base64,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" /></div></div><div class="widget-group"><div class="text-widget"><h2>Hosts Already Compromised</h2>Special attention should be paid to computers already compromised by malware as they are likely to be exfiltrating information from your private systems. Systems that fall into this category likely have had malware residing on them for some time already and the initial infection has been missed by existing security protections.</div><div class="horizontal-layout-widget"><div style="width:47.50%;"><div class="table-widget"><table><tr><th>Sample List of Compromised Devices</th></tr><tr><td>10.2.43.16</td></tr><tr><td>10.2.43.21</td></tr><tr><td>10.2.43.28</td></tr><tr><td>10.32.32.25</td></tr><tr><td>10.38.48.36</td></tr></table></div></div><div style="width:47.50%;margin-left:5.00%;">
+        <div class="full-height overview-box"><table>
+            <tr><th>Total Hosts Connected to CnC Servers<div class="description"></div></th></tr>
+            <tr><td>60</td></tr>
+        </table></div>
+    </div></div><div class="text-widget">The systems listed above are exhibiting signs of compromise as they are connecting outbound to known Command and Control (CnC) servers tracked by Cisco Talos. You should take action to remediate or restore these systems.</div></div><div class="widget-group"><div class="text-widget"><h2>Automating the Tuning Effort</h2>During the assessment period, the following changes to your network were observed.</div><div class="table-widget"><table><tr><th style='width:60%'>Network Change Type</th><th style='width:40%'>Number of Changes</th></tr><tr><td>A new operating system was found</td><td>69,076</td></tr><tr><td>A new host was added to the network</td><td>1,368</td></tr><tr><td>A device started using a new transport protocol</td><td>1,365</td></tr><tr><td>A device started using a new network protocol</td><td>2,630</td></tr></table></div><div class="text-widget">As network changes are made, Cisco solutions automatically adjust policy so new operating systems, hosts, and protocols are protected. Cisco automates the tuning process by monitoring networks in real time and observing changes, and then making appropriate policy changes as a result. For example, if Windows 2000 hosts running IIS appear on the network, Cisco ensures that rules protecting against Windows 2000 and IIS vulnerabilities, and not irrelevant rules that may cause false positives, protect these hosts.</div></div><div class="widget-group"><div class="text-widget"><h2>Applications Associated with Attacks</h2>The following applications have been identified as associated with attacks. You should identify applications in this list that have low business relevance and evaluate whether it would be helpful to control them on your network.</div><div class="horizontal-layout-widget"><div style="width:47.50%;"><div class="table-widget"><table><tr><th style='width:60%'>Apps Associated with High Impact Events</th><th style='width:40%'>Count</th></tr><tr><td>SMTP client</td><td>3,933</td></tr><tr><td>Web browser</td><td>169</td></tr><tr><td>Chrome</td><td>41</td></tr><tr><td>Firefox</td><td>27</td></tr><tr><td>cURL</td><td>9</td></tr></table></div></div><div style="width:47.50%;margin-left:5.00%;"><div class="table-widget"><table><tr><th style='width:60%'>Apps Associated with Lower Impact Events</th><th style='width:40%'>Count</th></tr><tr><td>WhatsApp client</td><td>23,192</td></tr><tr><td>Web browser</td><td>17,420</td></tr><tr><td>Mobile Safari</td><td>6,233</td></tr><tr><td>&nbsp;</td><td>3,897</td></tr><tr><td>Chrome</td><td>3,024</td></tr></table></div></div></div></div><div class="widget-group"><div class="text-widget"><h2>Top Attackers and Targets</h2>The top attackers and target machines observed in the attack attempts on your network are listed below. For high impact attacks in particular, you should ensure that targets are well protected from potential attackers by patching these machines and blocking potentially malicious traffic.</div><div class="text-widget"><h3>High Impact Events</h3></div><div class="horizontal-layout-widget"><div style="width:47.50%;"><div class="table-widget"><table><tr><th style='width:60%'>Attackers</th><th style='width:40%'>Attacks</th></tr><tr><td>72.18.165.87</td><td>2,137</td></tr><tr><td>72.18.165.86</td><td>1,327</td></tr><tr><td>72.18.165.85</td><td>469</td></tr><tr><td>10.32.32.25</td><td>32</td></tr><tr><td>89.248.174.11</td><td>26</td></tr></table></div></div><div style="width:47.50%;margin-left:5.00%;"><div class="table-widget"><table><tr><th style='width:60%'>Targets</th><th style='width:40%'>Attacks</th></tr><tr><td>72.18.160.12</td><td>3,933</td></tr><tr><td>72.18.166.14</td><td>32</td></tr><tr><td>72.18.166.15</td><td>25</td></tr><tr><td>72.18.161.57</td><td>22</td></tr><tr><td>72.18.166.54</td><td>21</td></tr></table></div></div></div><div class="text-widget"><h3>Lower Impact Events</h3></div><div class="horizontal-layout-widget"><div style="width:47.50%;"><div class="table-widget"><table><tr><th style='width:60%'>Attackers</th><th style='width:40%'>Attacks</th></tr><tr><td>10.80.67.92</td><td>1,689</td></tr><tr><td>10.40.128.44</td><td>1,124</td></tr><tr><td>10.49.72.45</td><td>1,036</td></tr><tr><td>10.49.72.42</td><td>866</td></tr><tr><td>10.80.68.100</td><td>859</td></tr></table></div></div><div style="width:47.50%;margin-left:5.00%;"><div class="table-widget"><table><tr><th style='width:60%'>Targets</th><th style='width:40%'>Attacks</th></tr><tr><td>31.13.93.54</td><td>13,262</td></tr><tr><td>157.240.19.54</td><td>6,997</td></tr><tr><td>99.181.79.2</td><td>2,789</td></tr><tr><td>208.82.2.183</td><td>2,062</td></tr><tr><td>208.116.172.108</td><td>1,140</td></tr></table></div></div></div></div>
+            </div>
+            
+        </section>
+        
+        <div class="pagebreak"></div>
+        
+    
+        <section>
+            
+            
+            <div class="icon3">
+                <h1><img src="data:image/png;base64,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" alt="Logo" />
+</h1>
+            </div>
+            <div class="title content3">
+                <h1>III. Business Risk of Attacks</h1>
+            </div>
+            <hr/>
+            <div class="content3">
+                <div class="widget-group"><div class="text-widget"><h2>Business Risk of Intrusion Attempts</h2>Different types of attacks were detected on the network, each introducing different business risks. Here are the most common attack types observed along with the risks each introduces.</div><div class="table-widget"><table><tr><th style='width:30%'>Attack Classification</th><th style='width:20%'>Number of Events</th><th style='width:50%'>Risk Associated with the Attack</th></tr><tr><td class='middle'>Potential Corporate Policy Violation</td><td class='middle'>240</td><td class='left'>Information Theft: These events indicate usage of apps and protocols in ways that may be prohibited by organizational policy.</td></tr><tr><td class='middle'>A Network Trojan was Detected</td><td class='middle'>4,502</td><td class='left'>Infrastructure Damage, Information Theft: A trojan is a program that appears to be benign to an end user but is in fact malicious. It can be used to steal information or cause damage.</td></tr><tr><td class='middle'>Denial of Service</td><td class='middle'>0</td><td class='left'>System Degradation, Denial of Service: Denial of service (DoS) attacks attack the reliability of your network infrastructure, causing service to be denied to legitimate users.</td></tr><tr><td class='middle'>Administrator/User Privilege Gain</td><td class='middle'>1,968</td><td class='left'>Information Theft, Infrastructure Damage: Users on network machines who gain privileges illicitly may be able to steal information and control machines.</td></tr></table></div></div>
+            </div>
+            
+        </section>
+        
+        <div class="pagebreak"></div>
+        
+    
+        <section>
+            
+            
+            <div class="icon4">
+                <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAAAhCAYAAABtNH0cAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC42/Ixj3wAABctJREFUaEPtWVuIVVUYnikLK0up7J52zwiyh4rqoXs0qAReilIwH6SmIkKhCI3Og/Y0FQgHmz1n39beMxPnPESoIFQ4BmZpNZrdVAxGkTKt0Sy6QU7fv8+31tn7zD6dczps56H54Ofs9f2Xtda/13WftlbR0xNc6ThqCPJNEAQXkM4cjuNMdd3ga8fx9ztO31Wkxw6uGz6FBo2IFApqHunMgQTM1fXatuokPXYoFPyndYPwlhaQzhye583X9bqueob02GE8EcT/KhGu6z+PCnejwoWkDOolwnEC0e/2vGAJqYZh28ES+O+RGKQM6iVC2iq+WD+Wk2odCPh9uaPqM1IG9ROhhtjYr0g1DPh9Sd8hUgb1EoE2fyo6/B4h1TokWDmo2kXKoIFEHGSD9pBqGOggRmEU+yApgwZGxE7We5RUY0DgKTgHnMViAlkmwrbts9esCc9hMYEsE2FZ686UPrNYhmWFt8LxNzge8X3/UtIGWSWiUAiuQb3HoD9uWd4M0gZZJcK2+y+B7rD0Ge2/jbQ01l+mg9p2OJu0QVaJQEMWVnyDxaQNskuEN1v7Qr+MtCjU8opCzSFtkFUisCss0r44lT5B2iCrRPT0qDnaN7GrjCeCwNRYUHZSJ1DBzaQNoBukfgMpg3qJAL+Vvu+TMrBt/y7tC7mPtAG49+j7ESmD+okI1tN31MtDcmZKX8v6MNlmEHNxkxzVGEEYhpehw0styzqflEG9RGBXwMLkL611M8VBq0PmLIsJiI/UKzFIGdRLhLRVfF3XvZxUAtJX6TOLrQNDq1M3CB2aTzpzoPPzdL14w6NOnicdyPpNGGa/QoZ7e3unk84ctt07Xeos1x3MJD22wDCcnM+XJrF40iB1WlZpMovjGMc4xhiyjWJxegAr9kNKqRtyuZFTqIpQLBbPFRuRUql0KukE4HedbJeybeJec+PAwMAEqtLQ7nl9MwoFrwPb5f3wnUY+FaIXW9xhsCVnsHBji7wDe+6HeruqbFuqiyYR0Ll+rZNkkI7geW9dAT46XMWlOoYGki0fVvZV26d9IHZduTQGW6ptIVs9L7ydZq2hvF+rv1Iqgag3aBahViJGRkba0akdSd+y4Jj9Gs0MkJxX02xFYP8IzSKgDbPA/1FtpwWx/sRF8mGa/zd4XukiBDteCRx9bVot53NU0A1ZSdMItRIhw1vz8NknZQz1iZgaV8szzSI4Th+mnq4vkk/QkRWO472I52K8U5gK5yHesLaVEYSyJHE1fvdqHu0+VigULqRb80CQl3UwVPI5Opf6AUWjViLk0KV5NOo7/N4Jur2sTQL6DdoWd6C+XC6XWIfiwAt5oRLX/7irq/JhCevVGUhGbLqEK6hqHgi0UQdCox4nXRO1EiELJzqob5KU6N+xldCdTrMI4ORDTWQj/6KRTgXqeycWbxZpA8SKjS61kXTzQCCzQMpNkXRN1EqEwHX7rsWo2qb1WlDHOpq0ydtHwnkrVCdwYj2NqlTAbpOOI6OOtAGm0fVaL30h3Tww9IqxQC+Rrol/S4SG7ECQPGzMAozyLVQj+cH+Cu/fSzoVsPVjMZ4jbQD9k1oP6SfdPBBosQ6ERPyCjnZQJW9vQvW+3kgiNGATalvfryyAKL+pedS5N76Y5vP5SfHrPIa7uYHiWabUg1ShLeE9KP+k9dhtHqOqecj8RQXRl56KqG/R4e1I0lE8N7R9yiEK3Nvo2Cq8OSxwKo9n+VgcTYH4WiAHIXYqioN6/obsguyA7e/x7bM8leILYhTvAH75X4qJsa3WAa9hWJaahuBfxANXpLFEJHeNpGBNeJ1mBqjvbjT+xzT76nOEjBDYb0+zFUH8we7u8GKat4ZczpuIhj2LwB+g84cRfBhvdicatYgmEdCgV2CzWcRxilNJ8y0HWxDjAHx/RoxDsH0X54hHaTIKa9dGHVwFv0H84qygfpAY8fVEQxZVxJb1YBNsJfYhaQNsO6t3pXS0tf0DmrIyOPVw+wUAAAAASUVORK5CYII=" alt="Logo" />
+</h1>
+            </div>
+            <div class="title content4">
+                <h1>IV. Recommendations</h1>
+            </div>
+            <hr/>
+            <div class="content4">
+                <div class="widget-group"><div class="text-widget">Despite your existing network and endpoint protections, critical attacks are taking place and placing your organization at risk. New countermeasures and security controls are required to mitigate the risk.</div><div class="text-widget">Cisco recommends deployment of network-based protections via the threat-focused Cisco Firepower Next Generation Firewall and NGIPS Appliances to complement existing protections. These will provide the following new capabilities and benefits:</div><div class="table-widget"><table><tr><th style='width:33%'>New Capability</th><th>Benefit</th></tr><tr><td class='middle'>Real-Time Contextual Awareness</td><td class='left pad'>Profile hosts, applications, users, and network infrastructure in real time. Assess potential vulnerabilities and identify network changes.</td></tr><tr><td class='middle'>Automatic Impact Assessment</td><td class='left pad'>Determine the risk of any attack to your business in real time in order to optimize response to it.</td></tr><tr><td class='middle'>File Identification and Control</td><td class='left pad'>Detect and optionally block files by file type. Capture files for offline analysis, if desired.</td></tr><tr><td class='middle'>Advanced Malware Protection (AMP)</td><td class='left pad'>Protect against malware with AMP for networks, which includes integration with AMP ThreatGRID for superior sandboxing, security intelligence and advanced file analysis. Also, AMP for Endpoints provides endpoint protection to offer defense in depth.</td></tr><tr><td class='middle'>URL filtering</td><td class='left pad'>Enforce acceptable use of the internet.</td></tr><tr><td class='middle'>Application Visibility and Control</td><td class='left pad'>Identify and control over 3000 applications. By leveraging OpenAppID, application detectors can be created for custom application. Furthermore, Snort rules can be written to address specific applications.</td></tr><tr><td class='middle'>Security Intelligence</td><td class='left pad'>With unparalleled visibility into the Internet, Cisco Talos provides dynamic IP and URL black list to protect against malicious websites.</td></tr><tr><td class='middle'>Automatic Policy Tuning</td><td class='left pad'>Automatically tune IPS protections in response to changes in your network composition.</td></tr><tr><td class='middle'>Association of Users with Security and Compliance Events</td><td class='left pad'>Associate users with activity on the network, including attacks and application usage, through integration with Active Directory servers.</td></tr><tr><td class='middle'>Collective Intelligence</td><td class='left pad'>Get rapid detection and insight into emerging threats so that defenses stay effective.</td></tr><tr><td class='middle'>Virtual Protection</td><td class='left pad'>Protect VM-to-VM communications the same as physical networks.</td></tr></table></div><div class="text-widget">In addition, Cisco offers optional Advanced Malware Protection for networks and hosts, and optional Application Control and URL Filtering, to help better protect against the latest threats. Please contact your Cisco representative or reseller for more information.</div></div>
+            </div>
+            
+        </section>
+        
+        <div class="pagebreak"></div>
+        
+    
+        <section>
+            
+            
+            <div class="icon5">
+                <h1><img src="data:image/png;base64,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" alt="Logo" />
+</h1>
+            </div>
+            <div class="title content5">
+                <h1>&nbsp;</h1>
+            </div>
+            <hr/>
+            <div class="content5">
+                <div class="text-widget"><div class='about-cisco-heading'>About Cisco</div> It's no secret that today's advanced attackers have the resources, expertise, and persistence to compromise any organization at any time. As attacks become more sophisticated and exploit a growing set of attack vectors, traditional defenses are no longer effective. <br><br> It's more imperative than ever to find the right threat-centric security products, services, and solutions for your current environment. These solutions must also easily adapt to meet the evolving needs of your extended network, which now goes beyond the perimeter to include endpoints, mobile devices, virtual machines, data centers, and the cloud. <br><br> For over three decades, Cisco has been a leader in network security protection, innovation, and investment. Our expertise and experience helps us increase intelligence and expand threat protection across the entire attack continuum for a level of security you can build your business on. <br><br> Cisco delivers intelligent cybersecurity for the real world. <div class='about-cisco-heading'>Contact Us</div> Want to learn more about getting this information on your network? Go to <a href="http://cisco.com/go/security" target="_blank">cisco.com/go/security</a> and request a live demo.</div>
+            </div>
+            
+        </section>
+        
+    
+</body>
+</html>

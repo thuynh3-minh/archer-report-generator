@@ -1,0 +1,9 @@
+Type, Messages, Percent
+Blocked:PDR,4085300,45.23%
+Accepted,3857881,42.71%
+"Blocked:Email,Firewall",557187,6.16%
+Blocked:Others,281805,3.12%
+Blocked:Spam,248352,2.75%
+Blocked:Anti-Virus,232,0%
+Blocked:Zero-Hour,75,0%
+Total,9030832,100%

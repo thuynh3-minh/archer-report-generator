@@ -1,0 +1,8 @@
+-Create a folder and add all elements just like @@2020 OCT(it has an html link, SCEP xlsx, malwarebytes csv, Proofpoint csv)
+-In that folder, also add the blocked list from Proofpoint, and add image that contains the number of all threats
+(You can find a sample folder here Q:\Information Security\Operations\Monthly Reporting\Archer\minh_test\@@2020 OCT)
+-So now there are 6 elements in the folder. But it will still run if some elements are missing. You just have to type in later.
+
+-Double click archer.exe to open. Then left click on the black screen and hit enter to run.
+-The app will have instruction for the rest. Like, type in the month in this form YYYYMM(such as 202011), and hit enter, and copy the path to that folder we created and paste it here.
+-Finally, check the created, there will be my_archer_report that gathers all the information needed. Thank you.
